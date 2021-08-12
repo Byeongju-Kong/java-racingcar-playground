@@ -2,17 +2,17 @@ package model;
 
 public class Distance {
     private static final String DISTANCE_SYMBOL = "-";
-    private int increaseTimes;
+    private int movementTimes;
 
     public Distance() {
-        increaseTimes = 0;
+        movementTimes = 0;
     }
 
     public void increase() {
-        increaseTimes++;
+        movementTimes++;
     }
 
     public String getDistance() {
-        return DISTANCE_SYMBOL.repeat(increaseTimes);
+        return DISTANCE_SYMBOL.repeat(movementTimes);
     }
 }
