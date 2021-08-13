@@ -20,17 +20,4 @@ public class Car {
     public void drive() {
         distance.increase();
     }
-
-    public boolean hasLongestDistance(Car otherCarA, Car otherCarB) {
-        return distance.getDistance() >= otherCarA.getDistance()
-                && distance.getDistance() >= otherCarB.getDistance();
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "carName=" + carName +
-                ", distance=" + distance +
-                '}';
-    }
 }

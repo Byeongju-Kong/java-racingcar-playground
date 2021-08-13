@@ -1,6 +1,5 @@
 package model.car;
 
-import model.car.Car;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -48,19 +47,6 @@ class CarTest {
                 () -> assertThat(actualCarNameOfFirstCar).isEqualTo("Audi"),
                 () -> assertThat(actualCarNameOfSecondCar).isEqualTo("BMW"),
                 () -> assertThat(actualCarNameOfThirdCar).isEqualTo("Benz")
-        );
-    }
-
-    @Test
-    @DisplayName("두 Car객체를 받아 자신의 Distance가 가장 크거나 같은지 반환한다.")
-    void hasLongestDistance() {
-        boolean actualFirst = firstCar.hasLongestDistance(secondCar, thirdCar);
-        boolean actualSecond = secondCar.hasLongestDistance(firstCar, thirdCar);
-        boolean actualThird = thirdCar.hasLongestDistance(firstCar, secondCar);
-        assertAll(
-                () -> assertThat(actualFirst).isTrue(),
-                () -> assertThat(actualSecond).isFalse(),
-                () -> assertThat(actualThird).isTrue()
         );
     }
 }
