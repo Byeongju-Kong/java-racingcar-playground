@@ -2,7 +2,7 @@ package model.car;
 
 public class Car {
     private final CarName carName;
-    private Distance distance;
+    private final Distance distance;
 
     public Car(String carName) {
         this.carName = new CarName(carName);
@@ -24,5 +24,13 @@ public class Car {
     public boolean hasLongestDistance(Car otherCarA, Car otherCarB) {
         return distance.getDistance() >= otherCarA.getDistance()
                 && distance.getDistance() >= otherCarB.getDistance();
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carName=" + carName +
+                ", distance=" + distance +
+                '}';
     }
 }
