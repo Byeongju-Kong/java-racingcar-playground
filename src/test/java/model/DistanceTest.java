@@ -18,10 +18,10 @@ class DistanceTest {
     @DisplayName("차가 움직이면 거리가 늘어나고 움직인 거리를 반환할 수 있다")
     void increaseAndGetDistance() {
         distance.increase();
-        String actual = distance.getDistance();
-        assertThat(actual).isEqualTo("-");
+        int actual = distance.getDistance();
+        assertThat(actual).isEqualTo(1);
         distance.increase();
         actual = distance.getDistance();
-        assertThat(actual).isEqualTo("--");
+        assertThat(actual).isEqualTo(2);
     }
 }

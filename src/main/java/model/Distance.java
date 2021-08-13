@@ -1,7 +1,6 @@
 package model;
 
 public class Distance {
-    private static final String DISTANCE_SYMBOL = "-";
     private int movementTimes;
 
     public Distance() {
@@ -12,7 +11,7 @@ public class Distance {
         movementTimes++;
     }
 
-    public String getDistance() {
-        return DISTANCE_SYMBOL.repeat(movementTimes);
+    public int getDistance() {
+        return movementTimes;
     }
 }
