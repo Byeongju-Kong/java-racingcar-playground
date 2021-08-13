@@ -1,4 +1,4 @@
-package model;
+package model.car;
 
 public class CarName {
     private static final int CAR_NAME_LENGTH_BOUNDARY = 5;

@@ -1,4 +1,4 @@
-package model;
+package model.car;
 
 public class Distance {
     private int movementTimes;
