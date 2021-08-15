@@ -31,7 +31,7 @@ public class Display {
         System.out.println();
     }
 
-    public static void showRacingResult(List<Car> winner) {
+    public static void showFinalResult(List<Car> winner) {
         StringBuilder result = new StringBuilder();
         String lastWords = "가 최종 우승했습니다.";
         IntStream.range(0, winner.size())
