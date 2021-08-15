@@ -8,7 +8,6 @@ import java.util.stream.IntStream;
 public class Display {
     private static final String DISTANCE_SYMBOL = "-";
     private static final int NUMBER_OF_CARS = 3;
-    private static boolean firstAccess = true;
 
     private Display() {
     }
