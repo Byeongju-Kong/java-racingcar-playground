@@ -21,14 +21,14 @@ public class Display {
         System.out.println("시도할 횟수는 몇회인가요?");
     }
 
+    public static void showStart() {
+        System.out.println("\n실행결과\n");
+    }
+
     public static void showRoundResult(Car[] cars) {
-        if (firstAccess) {
-            System.out.println("\n실행결과\n");
-            firstAccess = false;
-        }
         IntStream.range(0, NUMBER_OF_CARS)
-                .forEach(index -> System.out.print(cars[index].getCarName() + " : " +
-                        DISTANCE_SYMBOL.repeat(cars[index].getDistance()) + "\n"));
+                .forEach(index -> System.out.println(cars[index].getCarName() + " : " +
+                        DISTANCE_SYMBOL.repeat(cars[index].getDistance())));
         System.out.println();
     }
 
@@ -39,6 +39,6 @@ public class Display {
                 .forEach(index -> result.append(winner.get(index).getCarName()).append(","));
         result.deleteCharAt(result.length() - 1);
         result.append(lastWords);
-        System.out.println(result);
+        System.out.print(result);
     }
 }
