@@ -27,9 +27,9 @@ class RacingTest {
     void race(boolean[] randomMovement, int expectDistanceOfFirstCar, int expectDistanceOfSecondCar, int expectDistanceOfThirdCar) {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
         racing.race(randomMovement);
-        int actualDistanceOfFirstCar = racing.getDistances()[0];
-        int actualDistanceOfSecondCar = racing.getDistances()[1];
-        int actualDistanceOfThirdCar = racing.getDistances()[2];
+        int actualDistanceOfFirstCar = racing.getRoundResult()[0].getDistance();
+        int actualDistanceOfSecondCar = racing.getRoundResult()[1].getDistance();
+        int actualDistanceOfThirdCar = racing.getRoundResult()[2].getDistance();
         assertAll(
                 () -> assertThat(actualDistanceOfFirstCar).isEqualTo(expectDistanceOfFirstCar),
                 () -> assertThat(actualDistanceOfSecondCar).isEqualTo(expectDistanceOfSecondCar),

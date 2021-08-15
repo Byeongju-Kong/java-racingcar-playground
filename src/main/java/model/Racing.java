@@ -24,8 +24,8 @@ public class Racing {
         }
     }
 
-    public int[] getDistances() {
-        return new int[]{cars[0].getDistance(), cars[1].getDistance(), cars[2].getDistance()};
+    public Car[] getRoundResult() {
+        return new Car[]{cars[0], cars[1], cars[2]};
     }
 
     public void race(boolean[] randomMovements) { //getDistance 메서드 안으로 private하게 들어가면 되는데 테스트를 위해 굳이 public으로 분리해야하나?
