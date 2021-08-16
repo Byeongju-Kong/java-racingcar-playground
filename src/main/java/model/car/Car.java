@@ -20,4 +20,8 @@ public class Car {
     public void drive() {
         distance.increase();
     }
+
+    public boolean hasSameDistance(int maxDistance) {
+        return maxDistance == distance.getDistance();
+    }
 }

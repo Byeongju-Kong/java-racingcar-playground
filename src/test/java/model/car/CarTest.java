@@ -49,4 +49,21 @@ class CarTest {
                 () -> assertThat(actualCarNameOfThirdCar).isEqualTo("Benz")
         );
     }
+
+    @Test
+    @DisplayName("차 이름을 반환한다")
+    void hasSameDistance() {
+        Car audi = new Car("Audi");
+        Car bmw = new Car("BMW");
+        int distanceStandard = 3;
+        audi.drive();
+        audi.drive();
+        audi.drive();
+        bmw.drive();
+        bmw.drive();
+        assertAll(
+                () -> assertThat(audi.hasSameDistance(distanceStandard)).isTrue(),
+                () -> assertThat(bmw.hasSameDistance(distanceStandard)).isFalse()
+        );
+    }
 }
