@@ -3,6 +3,7 @@ package model;
 import model.car.Car;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -28,7 +29,7 @@ public class Racing {
         return new Car[]{cars[0], cars[1], cars[2]};
     }
 
-    public void race(boolean[] randomMovements) { //getDistance 메서드 안으로 private하게 들어가면 되는데 테스트를 위해 굳이 public으로 분리해야하나?
+    public void race(boolean[] randomMovements) {
         IntStream.range(0, NUMBER_OF_CARS)
                 .filter(index -> randomMovements[index])
                 .forEach(index -> cars[index].drive());
@@ -37,9 +38,9 @@ public class Racing {
     public List<Car> findLongestDistanceCar() {
         List<Car> result = new ArrayList<>();
         int maxDistance = max(max(cars[0].getDistance(), cars[1].getDistance()), cars[2].getDistance());
-        IntStream.range(0, NUMBER_OF_CARS)
-                .filter(index -> maxDistance == cars[index].getDistance())
-                .forEach(index -> result.add(cars[index]));
+        Arrays.stream(cars)
+                .filter(car -> car.hasSameDistance(maxDistance))
+                .forEach(result::add);
         return result;
     }
 }
