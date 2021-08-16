@@ -36,8 +36,7 @@ public class Display {
         String lastWords = "가 최종 우승했습니다.";
         IntStream.range(0, winner.size())
                 .forEach(index -> result.append(winner.get(index).getCarName()).append(","));
-        result.deleteCharAt(result.length() - 1);
-        result.append(lastWords);
-        System.out.print(result);
+        result.deleteCharAt(result.lastIndexOf(","));
+        System.out.print(result.append(lastWords));
     }
 }

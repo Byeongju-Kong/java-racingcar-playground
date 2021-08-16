@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="model.CarNameTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-12T07:09:50" hostname="gongbyecBookPro" time="0.107">
+  <properties/>
+  <testcase name="[1] Carnival" classname="model.CarNameTest" time="0.099"/>
+  <testcase name="[2] Sonata" classname="model.CarNameTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
