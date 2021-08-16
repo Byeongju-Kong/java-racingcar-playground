@@ -15,10 +15,18 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 class RacingTest {
     @Test
     @DisplayName("자동차 이름의 개수가 3이 아니라면 예외를 발생시킨다.")
-    void create_ExceptionBy() {
+    void create_ExceptionByNotThreeCars() {
         assertThatThrownBy(() -> new Racing(new String[]{"Audi", "BMW", "Benz", "Volvo"}))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("경주차의 개수가 잘못되었습니다.");
+    }
+
+    @Test
+    @DisplayName("자동차 이름의 개수가 3이 아니라면 예외를 발생시킨다.")
+    void create_ExceptionByOverlappedCarNames() {
+        assertThatThrownBy(() -> new Racing(new String[]{"Audi", "BMW", "Audi"}))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("경주차의 이름에 중복이 있습니다.");
     }
 
     @ParameterizedTest
