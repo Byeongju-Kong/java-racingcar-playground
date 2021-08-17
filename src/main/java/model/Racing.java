@@ -2,13 +2,11 @@ package model;
 
 import model.car.Car;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import static java.lang.Math.max;
 
 public class Racing {
     private final List<Car> cars;
@@ -44,8 +42,7 @@ public class Racing {
 
     public List<Car> findLongestDistanceCar() {
         List<Car> result = new ArrayList<>();
-        int maxDistance = max(max(cars.get(0).getDistance(), cars.get(1).getDistance()), cars.get(2).getDistance());
-        cars.stream().filter(car -> car.hasSameDistance(maxDistance))
+        cars.stream().filter(car -> car.hasLongestDistance(cars))
                 .forEach(result::add);
         return result;
     }
