@@ -23,9 +23,13 @@ public class RacingController {
         int racingRound = inputRacingRound();
         Display.showStart();
         while (racingRound-- > 0) {
-            racing.race(generateRandomMovements(numberOfCars));
-            Display.showRoundResult(racing.getRoundResult());
+            race();
         }
         Display.showFinalResult(racing.findLongestDistanceCar());
+    }
+
+    private void race() {
+        racing.race(generateRandomMovements(numberOfCars));
+        Display.showRoundResult(racing.getRoundResult());
     }
 }
