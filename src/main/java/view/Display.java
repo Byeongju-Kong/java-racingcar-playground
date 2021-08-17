@@ -24,10 +24,10 @@ public class Display {
         System.out.println("\n실행결과\n");
     }
 
-    public static void showRoundResult(Car[] cars) {
+    public static void showRoundResult(List<Car> cars) {
         IntStream.range(0, NUMBER_OF_CARS)
-                .forEach(index -> System.out.println(cars[index].getCarName() + " : " +
-                        DISTANCE_SYMBOL.repeat(cars[index].getDistance())));
+                .forEach(index -> System.out.println(cars.get(index).getCarName() + " : " +
+                        DISTANCE_SYMBOL.repeat(cars.get(index).getDistance())));
         System.out.println();
     }
 

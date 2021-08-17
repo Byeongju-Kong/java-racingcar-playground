@@ -5,18 +5,20 @@ import model.car.Car;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.lang.Math.max;
 
 public class Racing {
-    private final Car[] cars = new Car[3];
+    private final List<Car> cars;
     private static final int NUMBER_OF_CARS = 3;
 
     public Racing(String[] carNames) {
         validateCarNames(carNames);
-        IntStream.range(0, NUMBER_OF_CARS)
-                .forEach(index -> cars[index] = new Car(carNames[index]));
+        cars = Arrays.stream(carNames)
+                .map(Car::new)
+                .collect(Collectors.toList());
     }
 
     private void validateCarNames(String[] carNames) {
@@ -28,21 +30,20 @@ public class Racing {
         }
     }
 
-    public Car[] getRoundResult() {
-        return new Car[]{cars[0], cars[1], cars[2]};
+    public List<Car> getRoundResult() {
+        return cars;
     }
 
     public void race(boolean[] randomMovements) {
         IntStream.range(0, NUMBER_OF_CARS)
                 .filter(index -> randomMovements[index])
-                .forEach(index -> cars[index].drive());
+                .forEach(index -> cars.get(index).drive());
     }
 
     public List<Car> findLongestDistanceCar() {
         List<Car> result = new ArrayList<>();
-        int maxDistance = max(max(cars[0].getDistance(), cars[1].getDistance()), cars[2].getDistance());
-        Arrays.stream(cars)
-                .filter(car -> car.hasSameDistance(maxDistance))
+        int maxDistance = max(max(cars.get(0).getDistance(), cars.get(1).getDistance()), cars.get(2).getDistance());
+        cars.stream().filter(car -> car.hasSameDistance(maxDistance))
                 .forEach(result::add);
         return result;
     }
