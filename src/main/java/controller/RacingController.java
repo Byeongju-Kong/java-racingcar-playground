@@ -9,10 +9,13 @@ import static util.RandomMovement.generateRandomMovements;
 
 public class RacingController {
     private Racing racing;
+    private int numberOfCars;
 
     public RacingController() {
         Display.alertInputCarNames();
-        racing = new Racing(inputCarNames());
+        String[] carNames = inputCarNames();
+        numberOfCars = carNames.length;
+        racing = new Racing(carNames);
     }
 
     public void run() {
@@ -20,7 +23,7 @@ public class RacingController {
         int racingRound = inputRacingRound();
         Display.showStart();
         while (racingRound-- > 0) {
-            racing.race(generateRandomMovements());
+            racing.race(generateRandomMovements(numberOfCars));
             Display.showRoundResult(racing.getRoundResult());
         }
         Display.showFinalResult(racing.findLongestDistanceCar());

@@ -12,7 +12,8 @@ import static java.lang.Math.max;
 
 public class Racing {
     private final List<Car> cars;
-    private static final int NUMBER_OF_CARS = 3;
+    private int numberOfCars;
+    private static final int MIN_NUMBER_OF_CARS = 2;
 
     public Racing(String[] carNames) {
         validateCarNames(carNames);
@@ -22,10 +23,11 @@ public class Racing {
     }
 
     private void validateCarNames(String[] carNames) {
-        if (carNames.length != 3) {
-            throw new IllegalArgumentException("경주차의 개수가 잘못되었습니다.");
+        numberOfCars = carNames.length;
+        if (carNames.length < MIN_NUMBER_OF_CARS) {
+            throw new IllegalArgumentException("경주차는 적어도 2개가 필요합니다.");
         }
-        if (Arrays.stream(carNames).distinct().count() != NUMBER_OF_CARS) {
+        if (Arrays.stream(carNames).distinct().count() != numberOfCars) {
             throw new IllegalArgumentException("경주차의 이름에 중복이 있습니다.");
         }
     }
@@ -34,9 +36,9 @@ public class Racing {
         return cars;
     }
 
-    public void race(boolean[] randomMovements) {
-        IntStream.range(0, NUMBER_OF_CARS)
-                .filter(index -> randomMovements[index])
+    public void race(List<Boolean> randomMovements) {
+        IntStream.range(0, numberOfCars)
+                .filter(randomMovements::get)
                 .forEach(index -> cars.get(index).drive());
     }
 

@@ -7,7 +7,6 @@ import java.util.stream.IntStream;
 
 public class Display {
     private static final String DISTANCE_SYMBOL = "-";
-    private static final int NUMBER_OF_CARS = 3;
 
     private Display() {
     }
@@ -25,7 +24,7 @@ public class Display {
     }
 
     public static void showRoundResult(List<Car> cars) {
-        IntStream.range(0, NUMBER_OF_CARS)
+        IntStream.range(0, cars.size())
                 .forEach(index -> System.out.println(cars.get(index).getCarName() + " : " +
                         DISTANCE_SYMBOL.repeat(cars.get(index).getDistance())));
         System.out.println();
