@@ -12,10 +12,11 @@ import static java.lang.Math.max;
 
 public class Racing {
     private final List<Car> cars;
-    private int numberOfCars;
+    private final int numberOfCars;
     private static final int MIN_NUMBER_OF_CARS = 2;
 
     public Racing(String[] carNames) {
+        numberOfCars = carNames.length;
         validateCarNames(carNames);
         cars = Arrays.stream(carNames)
                 .map(Car::new)
@@ -23,7 +24,6 @@ public class Racing {
     }
 
     private void validateCarNames(String[] carNames) {
-        numberOfCars = carNames.length;
         if (carNames.length < MIN_NUMBER_OF_CARS) {
             throw new IllegalArgumentException("경주차는 적어도 2개가 필요합니다.");
         }

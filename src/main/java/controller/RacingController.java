@@ -8,8 +8,8 @@ import static controller.Input.inputRacingRound;
 import static util.RandomMovement.generateRandomMovements;
 
 public class RacingController {
-    private Racing racing;
-    private int numberOfCars;
+    private final Racing racing;
+    private final int numberOfCars;
 
     public RacingController() {
         Display.alertInputCarNames();
