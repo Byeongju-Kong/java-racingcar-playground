@@ -1,5 +1,7 @@
 package model.car;
 
+import java.util.List;
+
 public class Car {
     private final CarName carName;
     private final Distance distance;
@@ -21,7 +23,8 @@ public class Car {
         distance.increase();
     }
 
-    public boolean hasSameDistance(int maxDistance) {
-        return maxDistance == distance.getDistance();
+    public boolean hasLongestDistance(List<Car> otherCars) {
+        return otherCars.stream()
+                .allMatch(otherCar -> otherCar.getDistance() <= this.getDistance());
     }
 }

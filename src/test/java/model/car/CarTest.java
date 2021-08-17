@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
@@ -51,19 +53,31 @@ class CarTest {
     }
 
     @Test
-    @DisplayName("차 이름을 반환한다")
+    @DisplayName("가장 먼 거리를 간 차 이름(들)을 반환한다")
     void hasSameDistance() {
         Car audi = new Car("Audi");
         Car bmw = new Car("BMW");
-        int distanceStandard = 3;
+        Car benz = new Car("Benz");
         audi.drive();
         audi.drive();
         audi.drive();
+
         bmw.drive();
         bmw.drive();
+
+        benz.drive();
+        benz.drive();
         assertAll(
-                () -> assertThat(audi.hasSameDistance(distanceStandard)).isTrue(),
-                () -> assertThat(bmw.hasSameDistance(distanceStandard)).isFalse()
+                () -> assertThat(audi.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue(),
+                () -> assertThat(bmw.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isFalse(),
+                () -> assertThat(benz.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isFalse()
         );
+        benz.drive();
+        assertAll(
+                () -> assertThat(audi.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue(),
+                () -> assertThat(bmw.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isFalse(),
+                () -> assertThat(benz.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue()
+        );
+
     }
 }
