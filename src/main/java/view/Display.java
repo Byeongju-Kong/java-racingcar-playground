@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 
 public class Display {
     private static final String DISTANCE_SYMBOL = "-";
+    private static final String COMMA = ",";
 
     private Display() {
     }
@@ -34,8 +35,8 @@ public class Display {
         StringBuilder result = new StringBuilder();
         String lastWords = "가 최종 우승했습니다.";
         IntStream.range(0, winner.size())
-                .forEach(index -> result.append(winner.get(index).getCarName()).append(","));
-        result.deleteCharAt(result.lastIndexOf(","));
+                .forEach(index -> result.append(winner.get(index).getCarName()).append(COMMA));
+        result.deleteCharAt(result.lastIndexOf(COMMA));
         System.out.print(result.append(lastWords));
     }
 }
