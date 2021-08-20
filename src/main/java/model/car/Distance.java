@@ -1,7 +1,7 @@
 package model.car;
 
 public class Distance {
-    private int movementTimes;
+    private Integer movementTimes;
 
     public Distance() {
         movementTimes = 0;

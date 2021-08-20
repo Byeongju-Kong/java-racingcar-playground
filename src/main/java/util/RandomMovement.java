@@ -11,7 +11,7 @@ public class RandomMovement {
     private RandomMovement() {
     }
 
-    public static List<Boolean> generateRandomMovements(int number) {
+    public static List<Boolean> generateRandomMovements(Integer number) {
         return Stream.generate(RANDOM::nextBoolean)
                 .limit(number)
                 .collect(Collectors.toList());

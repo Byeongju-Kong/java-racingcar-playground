@@ -9,7 +9,7 @@ import static util.RandomMovement.generateRandomMovements;
 
 public class RacingController {
     private final Racing racing;
-    private final int numberOfCars;
+    private final Integer numberOfCars;
 
     public RacingController() {
         Display.alertInputCarNames();

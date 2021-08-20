@@ -9,8 +9,8 @@ import java.util.stream.IntStream;
 
 public class Racing {
     private final List<Car> cars;
-    private final int numberOfCars;
-    private static final int MIN_NUMBER_OF_CARS = 2;
+    private final Integer numberOfCars;
+    private static final Integer MIN_NUMBER_OF_CARS = 2;
 
     public Racing(String[] carNames) {
         numberOfCars = carNames.length;
