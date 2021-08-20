@@ -55,29 +55,10 @@ class CarTest {
     @Test
     @DisplayName("가장 먼 거리를 간 차 이름(들)을 반환한다")
     void hasSameDistance() {
-        Car audi = new Car("Audi");
-        Car bmw = new Car("BMW");
-        Car benz = new Car("Benz");
-        audi.drive();
-        audi.drive();
-        audi.drive();
-
-        bmw.drive();
-        bmw.drive();
-
-        benz.drive();
-        benz.drive();
         assertAll(
-                () -> assertThat(audi.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue(),
-                () -> assertThat(bmw.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isFalse(),
-                () -> assertThat(benz.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isFalse()
+                () -> assertThat(firstCar.hasLongestDistance(Arrays.asList(firstCar, secondCar, thirdCar))).isTrue(),
+                () -> assertThat(secondCar.hasLongestDistance(Arrays.asList(firstCar, secondCar, thirdCar))).isFalse(),
+                () -> assertThat(thirdCar.hasLongestDistance(Arrays.asList(firstCar, secondCar, thirdCar))).isTrue()
         );
-        benz.drive();
-        assertAll(
-                () -> assertThat(audi.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue(),
-                () -> assertThat(bmw.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isFalse(),
-                () -> assertThat(benz.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue()
-        );
-
     }
 }
