@@ -2,7 +2,6 @@ package model;
 
 import model.car.Car;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -41,9 +40,7 @@ public class Racing {
     }
 
     public List<Car> findLongestDistanceCar() {
-        List<Car> result = new ArrayList<>();
-        cars.stream().filter(car -> car.hasLongestDistance(cars))
-                .forEach(result::add);
-        return result;
+        return cars.stream().filter(car -> car.hasLongestDistance(cars))
+                .collect(Collectors.toList());
     }
 }
