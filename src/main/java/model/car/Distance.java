@@ -11,7 +11,7 @@ public class Distance {
         movementTimes++;
     }
 
-    public int getDistance() {
+    public Integer getDistance() {
         return movementTimes;
     }
 }

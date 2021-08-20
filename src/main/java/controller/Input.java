@@ -12,7 +12,7 @@ public class Input {
         return SCANNER.nextLine().split(",");
     }
 
-    public static int inputRacingRound() {
+    public static Integer inputRacingRound() {
         return Integer.parseInt(SCANNER.nextLine());
     }
 }
