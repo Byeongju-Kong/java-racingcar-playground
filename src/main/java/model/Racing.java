@@ -29,8 +29,13 @@ public class Racing {
         }
     }
 
-    public List<Car> getRoundResult() {
-        return cars;
+    public String getRoundResult() {
+        String roundResult = "";
+        String distanceSymbol = "-";
+        for (Car car : cars) {
+            roundResult += car.getCarName() + " : " + distanceSymbol.repeat(car.getDistance()) + "\n";
+        }
+        return roundResult;
     }
 
     public void race(List<Boolean> randomMovements) {

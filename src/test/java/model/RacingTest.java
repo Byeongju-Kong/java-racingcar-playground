@@ -2,13 +2,8 @@ package model;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -31,29 +26,14 @@ class RacingTest {
                 .hasMessage("경주차의 이름에 중복이 있습니다.");
     }
 
-    @ParameterizedTest
+    @Test
     @DisplayName("랜덤한 이동여부를 받아 경주차들을 전진시킨다.")
-    @MethodSource("provideMovementAndResult")
-    void race(List<Boolean> randomMovement, int expectDistanceOfFirstCar, int expectDistanceOfSecondCar, int expectDistanceOfThirdCar) {
+    void race() {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
-        racing.race(randomMovement);
-        int actualDistanceOfFirstCar = racing.getRoundResult().get(0).getDistance();
-        int actualDistanceOfSecondCar = racing.getRoundResult().get(1).getDistance();
-        int actualDistanceOfThirdCar = racing.getRoundResult().get(2).getDistance();
-        assertAll(
-                () -> assertThat(actualDistanceOfFirstCar).isEqualTo(expectDistanceOfFirstCar),
-                () -> assertThat(actualDistanceOfSecondCar).isEqualTo(expectDistanceOfSecondCar),
-                () -> assertThat(actualDistanceOfThirdCar).isEqualTo(expectDistanceOfThirdCar)
-        );
-    }
-
-    private static Stream<Arguments> provideMovementAndResult() {
-        return Stream.of(
-                Arguments.of(Arrays.asList(true, true, true), 1, 1, 1),
-                Arguments.of(Arrays.asList(true, false, true), 1, 0, 1),
-                Arguments.of(Arrays.asList(false, true, false), 0, 1, 0),
-                Arguments.of(Arrays.asList(false, false, false), 0, 0, 0)
-        );
+        racing.race(Arrays.asList(true, false, true));
+        String actual = racing.getRoundResult();
+        String expect = "Audi : -\nBMW : \nBenz : -\n";
+        assertThat(actual).isEqualTo(expect);
     }
 
     @Test

@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class Display {
-    private static final String DISTANCE_SYMBOL = "-";
     private static final String COMMA = ",";
 
     private Display() {
@@ -24,11 +23,8 @@ public class Display {
         System.out.println("\n실행결과\n");
     }
 
-    public static void showRoundResult(List<Car> cars) {
-        IntStream.range(0, cars.size())
-                .forEach(index -> System.out.println(cars.get(index).getCarName() + " : " +
-                        DISTANCE_SYMBOL.repeat(cars.get(index).getDistance())));
-        System.out.println();
+    public static void showRoundResult(String roundResult) {
+        System.out.println(roundResult);
     }
 
     public static void showFinalResult(List<Car> winner) {
