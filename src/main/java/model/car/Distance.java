@@ -1,14 +1,10 @@
 package model.car;
 
 public class Distance {
-    private Integer movementTimes;
+    private final Integer movementTimes;
 
-    public Distance() {
-        movementTimes = 0;
-    }
-
-    public void increase() {
-        movementTimes++;
+    public Distance(final Integer distance) {
+        movementTimes = distance;
     }
 
     public Integer getDistance() {

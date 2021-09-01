@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Car {
     private final CarName carName;
-    private final Distance distance;
+    private Distance distance;
 
     public Car(String carName) {
         this.carName = new CarName(carName);
-        distance = new Distance();
+        distance = new Distance(0);
     }
 
     public String getCarName() {
@@ -20,7 +20,7 @@ public class Car {
     }
 
     public void drive() {
-        distance.increase();
+        distance = new Distance(getDistance() + 1);
     }
 
     public boolean hasLongestDistance(List<Car> otherCars) {
