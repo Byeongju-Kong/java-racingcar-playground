@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class Display {
-    //TODO : DELIMITER 이름
-    private static final String COMMA = ",";
+    private static final String DELIMITER = ",";
     private static final String DISTANCE_SYMBOL = "-";
 
     private Display() {
@@ -37,8 +36,8 @@ public class Display {
         StringBuilder result = new StringBuilder();
         String lastWords = "가 최종 우승했습니다.";
         IntStream.range(0, winner.size())
-                .forEach(index -> result.append(winner.get(index).getCarName()).append(COMMA));
-        result.deleteCharAt(result.lastIndexOf(COMMA));
+                .forEach(index -> result.append(winner.get(index).getCarName()).append(DELIMITER));
+        result.deleteCharAt(result.lastIndexOf(DELIMITER));
         System.out.print(result.append(lastWords));
     }
 }
