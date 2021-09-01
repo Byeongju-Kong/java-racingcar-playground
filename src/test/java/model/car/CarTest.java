@@ -2,6 +2,8 @@ package model.car;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.Arrays;
 
@@ -18,17 +20,13 @@ class CarTest {
         assertThat(actualDistance).isEqualTo(expectedDistance);
     }
 
-    @Test
-    @DisplayName("차 이름을 반환한다")
-    void getCarName() {
-        String actualCarNameOfFirstCar = firstCar.getCarName();
-        String actualCarNameOfSecondCar = secondCar.getCarName();
-        String actualCarNameOfThirdCar = thirdCar.getCarName();
-        assertAll(
-                () -> assertThat(actualCarNameOfFirstCar).isEqualTo("Audi"),
-                () -> assertThat(actualCarNameOfSecondCar).isEqualTo("BMW"),
-                () -> assertThat(actualCarNameOfThirdCar).isEqualTo("Benz")
-        );
+    @ParameterizedTest
+    @CsvSource("audi,audi")
+    @DisplayName("Car 객체의 이름을 반환한다.")
+    void driveAndGetDistance(String actualCarName, String expectedCarName) {
+        Car car = new Car(actualCarName);
+        String actual = car.getCarName();
+        assertThat(actual).isEqualTo(expectedCarName);
     }
 
     @Test
