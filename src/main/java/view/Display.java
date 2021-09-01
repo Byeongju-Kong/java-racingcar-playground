@@ -1,12 +1,15 @@
 package view;
 
+import model.RoundDTO;
 import model.car.Car;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
 public class Display {
+    //TODO : DELIMITER 이름
     private static final String COMMA = ",";
+    private static final String DISTANCE_SYMBOL = "-";
 
     private Display() {
     }
@@ -23,8 +26,11 @@ public class Display {
         System.out.println("\n실행결과\n");
     }
 
-    public static void showRoundResult(String roundResult) {
-        System.out.println(roundResult);
+    public static void showRoundResult(RoundDTO roundResult) {
+        List<String> carNames = roundResult.getCarNames();
+        List<Integer> distances = roundResult.getDistances();
+        IntStream.range(0, carNames.size())
+                .forEach(index -> System.out.println(carNames.get(index) + " : " + DISTANCE_SYMBOL.repeat(distances.get(index))));
     }
 
     public static void showFinalResult(List<Car> winner) {
