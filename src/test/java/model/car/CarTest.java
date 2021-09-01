@@ -1,42 +1,21 @@
 package model.car;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertAll;
 
 class CarTest {
-    private Car firstCar;
-    private Car secondCar;
-    private Car thirdCar;
-
-    @BeforeEach
-    void setUp() {
-        firstCar = new Car("Audi");
-        secondCar = new Car("BMW");
-        thirdCar = new Car("Benz");
-        firstCar.drive();
-        firstCar.drive();
-        secondCar.drive();
-        thirdCar.drive();
-        thirdCar.drive();
-    }
-
     @Test
     @DisplayName("차를 달리게 하고 달린 거리를 반환한다")
     void driveAndGetDistance() {
-        int actualDistanceOfFirstCar = firstCar.getDistance();
-        int actualDistanceOfSecondCar = secondCar.getDistance();
-        int actualDistanceOfThirdCar = thirdCar.getDistance();
-        assertAll(
-                () -> assertThat(actualDistanceOfFirstCar).isEqualTo(2),
-                () -> assertThat(actualDistanceOfSecondCar).isEqualTo(1),
-                () -> assertThat(actualDistanceOfThirdCar).isEqualTo(2)
-        );
+        Car audi = new Car("Audi");
+        audi.drive();
+        int expectedDistance = 1;
+        int actualDistance = audi.getDistance();
+        assertThat(actualDistance).isEqualTo(expectedDistance);
     }
 
     @Test
@@ -55,10 +34,10 @@ class CarTest {
     @Test
     @DisplayName("가장 먼 거리를 간 차 이름(들)을 반환한다")
     void hasSameDistance() {
-        assertAll(
-                () -> assertThat(firstCar.hasLongestDistance(Arrays.asList(firstCar, secondCar, thirdCar))).isTrue(),
-                () -> assertThat(secondCar.hasLongestDistance(Arrays.asList(firstCar, secondCar, thirdCar))).isFalse(),
-                () -> assertThat(thirdCar.hasLongestDistance(Arrays.asList(firstCar, secondCar, thirdCar))).isTrue()
-        );
+        Car audi = new Car("Audi");
+        Car bmw = new Car("BMW");
+        Car benz = new Car("Benz");
+        audi.drive();
+        assertThat(audi.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue();
     }
 }
