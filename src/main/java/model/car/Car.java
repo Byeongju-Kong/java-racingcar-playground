@@ -25,6 +25,10 @@ public class Car {
 
     public boolean hasLongestDistance(List<Car> otherCars) {
         return otherCars.stream()
-                .allMatch(otherCar -> otherCar.getDistance() <= this.getDistance());
+                .allMatch(otherCar -> otherCar.hasLongerDistance(this.getDistance()));
+    }
+
+    private boolean hasLongerDistance(final int distance) {
+        return this.getDistance() >= distance;
     }
 }
