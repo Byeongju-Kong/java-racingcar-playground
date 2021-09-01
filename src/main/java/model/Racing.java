@@ -29,13 +29,10 @@ public class Racing {
         }
     }
 
-    public String getRoundResult() {
-        String roundResult = "";
-        String distanceSymbol = "-";
-        for (Car car : cars) {
-            roundResult += car.getCarName() + " : " + distanceSymbol.repeat(car.getDistance()) + "\n";
-        }
-        return roundResult;
+    public RoundDTO getRoundResult() {
+        List<String> carNames = cars.stream().map(Car::getCarName).collect(Collectors.toList());
+        List<Integer> distances = cars.stream().map(Car::getDistance).collect(Collectors.toList());
+        return new RoundDTO(carNames, distances);
     }
 
     public void race(List<Boolean> randomMovements) {

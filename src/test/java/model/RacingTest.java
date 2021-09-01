@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -31,9 +32,9 @@ class RacingTest {
     void race() {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
         racing.race(Arrays.asList(true, false, true));
-        String actual = racing.getRoundResult();
-        String expect = "Audi : -\nBMW : \nBenz : -\n";
-        assertThat(actual).isEqualTo(expect);
+        List<Integer> expectedDistances = Arrays.asList(1, 0, 1);
+        List<Integer> actualDistances = racing.getRoundResult().getDistances();
+        assertThat(actualDistances).isEqualTo(expectedDistances);
     }
 
     @Test
@@ -45,7 +46,5 @@ class RacingTest {
                 () -> assertThat(racing.findLongestDistanceCar().get(0).getCarName()).isEqualTo("Audi"),
                 () -> assertThat(racing.findLongestDistanceCar().get(1).getCarName()).isEqualTo("Benz")
         );
-        racing.race(Arrays.asList(true, false, false));
-        assertThat(racing.findLongestDistanceCar().get(0).getCarName()).isEqualTo("Audi");
     }
 }
