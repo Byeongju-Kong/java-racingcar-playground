@@ -1,6 +1,7 @@
 package model;
 
 import model.car.Car;
+import model.dto.RoundDTO;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,6 +1,6 @@
 package view;
 
-import model.RoundDTO;
+import model.dto.RoundDTO;
 import model.car.Car;
 
 import java.util.List;
