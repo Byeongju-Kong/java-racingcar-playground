@@ -13,7 +13,7 @@ public class Racing {
     private final Integer numberOfCars;
     private static final Integer MIN_NUMBER_OF_CARS = 2;
 
-    public Racing(String[] carNames) {
+    public Racing(final String[] carNames) {
         numberOfCars = carNames.length;
         validateCarNames(carNames);
         cars = Arrays.stream(carNames)
@@ -21,7 +21,7 @@ public class Racing {
                 .collect(Collectors.toList());
     }
 
-    private void validateCarNames(String[] carNames) {
+    private void validateCarNames(final String[] carNames) {
         if (carNames.length < MIN_NUMBER_OF_CARS) {
             throw new IllegalArgumentException("경주차는 적어도 2개가 필요합니다.");
         }
@@ -36,7 +36,7 @@ public class Racing {
         return new RoundDTO(carNames, distances);
     }
 
-    public void race(List<Boolean> randomMovements) {
+    public void race(final List<Boolean> randomMovements) {
         IntStream.range(0, numberOfCars)
                 .filter(randomMovements::get)
                 .forEach(index -> cars.get(index).drive());

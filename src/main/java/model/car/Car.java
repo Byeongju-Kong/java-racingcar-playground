@@ -23,7 +23,7 @@ public class Car {
         distance = new Distance(getDistance() + 1);
     }
 
-    public boolean hasLongestDistance(List<Car> otherCars) {
+    public boolean hasLongestDistance(final List<Car> otherCars) {
         return otherCars.stream()
                 .allMatch(otherCar -> otherCar.hasShorterDistance(this.getDistance()));
     }

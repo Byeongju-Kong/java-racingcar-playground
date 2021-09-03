@@ -6,7 +6,7 @@ public class RoundDTO {
     private final List<String> carNames;
     private final List<Integer> distances;
 
-    public RoundDTO(List<String> carNames, List<Integer> distances) {
+    public RoundDTO(final List<String> carNames, final List<Integer> distances) {
         this.carNames = carNames;
         this.distances = distances;
     }
