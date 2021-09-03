@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 import static controller.Input.inputCarNames;
 import static controller.Input.inputRacingRound;
 
-public class RacingGameController {
+public class RacingGameController implements GameController {
     private final Racing racing;
     private final Integer numberOfCars;
 
