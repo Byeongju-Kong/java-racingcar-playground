@@ -11,11 +11,11 @@ import java.util.stream.Stream;
 import static controller.Input.inputCarNames;
 import static controller.Input.inputRacingRound;
 
-public class RacingController {
+public class RacingGameController {
     private final Racing racing;
     private final Integer numberOfCars;
 
-    public RacingController() {
+    public RacingGameController() {
         Display.alertInputCarNames();
         String[] carNames = inputCarNames();
         numberOfCars = carNames.length;
