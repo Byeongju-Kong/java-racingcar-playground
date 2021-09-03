@@ -3,9 +3,13 @@ package controller;
 import model.Racing;
 import view.Display;
 
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import static controller.Input.inputCarNames;
 import static controller.Input.inputRacingRound;
-import static util.RandomMovement.generateRandomMovements;
 
 public class RacingController {
     private final Racing racing;
@@ -31,5 +35,12 @@ public class RacingController {
     private void race() {
         racing.race(generateRandomMovements(numberOfCars));
         Display.showRoundResult(racing.getRoundResult());
+    }
+
+    private List<Boolean> generateRandomMovements(final int numberOfCars) {
+        Random random = new Random();
+        return Stream.generate(random::nextBoolean)
+                .limit(numberOfCars)
+                .collect(Collectors.toList());
     }
 }
