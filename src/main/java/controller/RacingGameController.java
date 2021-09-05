@@ -1,6 +1,8 @@
 package controller;
 
 import model.Racing;
+import view.Display;
+import view.Displayable;
 
 import java.util.List;
 import java.util.Random;
@@ -9,32 +11,33 @@ import java.util.stream.Stream;
 
 import static controller.Input.inputCarNames;
 import static controller.Input.inputRacingRound;
-import static view.Display.*;
 
 public class RacingGameController implements GameController {
     private final Racing racing;
     private final Integer numberOfCars;
+    private final Displayable display;
 
     public RacingGameController() {
-        alertInputCarNames();
+        display = new Display();
+        display.alertInputCarNames();
         String[] carNames = inputCarNames();
         numberOfCars = carNames.length;
         racing = new Racing(carNames);
     }
 
     public void run() {
-        alertInputRacingRound();
+        display.alertInputRacingRound();
         int racingRound = inputRacingRound();
-        showStart();
+        display.showStart();
         while (racingRound-- > 0) {
             race();
         }
-        showFinalResult(racing.findLongestDistanceCar());
+        display.showFinalResult(racing.findLongestDistanceCar());
     }
 
     private void race() {
         racing.race(generateRandomMovements(numberOfCars));
-        showRoundResult(racing.getRoundResult());
+        display.showRoundResult(racing.getRoundResult());
     }
 
     private List<Boolean> generateRandomMovements(final int numberOfCars) {
