@@ -3,16 +3,13 @@ package controller;
 import java.util.Scanner;
 
 public class Input {
-    private static final Scanner SCANNER = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-    private Input() {
+    public String[] inputCarNames() {
+        return scanner.nextLine().split(",");
     }
 
-    public static String[] inputCarNames() {
-        return SCANNER.nextLine().split(",");
-    }
-
-    public static Integer inputRacingRound() {
-        return Integer.parseInt(SCANNER.nextLine());
+    public Integer inputRacingRound() {
+        return Integer.parseInt(scanner.nextLine());
     }
 }
