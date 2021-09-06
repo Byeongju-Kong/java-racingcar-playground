@@ -29,7 +29,7 @@ public class RacingGameController implements GameController {
         while (racingRound-- > 0) {
             race();
         }
-        display.showFinalResult(racing.findLongestDistanceCar());
+        display.showFinalResult(racing.findLongestDistanceCars());
     }
 
     private void race() {

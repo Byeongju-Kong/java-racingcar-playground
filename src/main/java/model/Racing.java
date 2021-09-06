@@ -42,7 +42,7 @@ public class Racing {
                 .forEach(index -> cars.get(index).drive());
     }
 
-    public List<Car> findLongestDistanceCar() {
+    public List<Car> findLongestDistanceCars() {
         return cars.stream().filter(car -> car.hasLongestDistance(cars))
                 .collect(Collectors.toList());
     }
