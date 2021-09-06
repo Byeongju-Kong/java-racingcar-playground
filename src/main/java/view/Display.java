@@ -6,7 +6,7 @@ import model.car.Car;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class Display implements Displayable{
+public class Display implements Displayable {
     private static final String DISTANCE_SYMBOL = "-";
     private static final String DELIMITER = ",";
 
@@ -23,10 +23,9 @@ public class Display implements Displayable{
     }
 
     public void showRoundResult(RoundDTO roundResult) {
-        List<String> carNames = roundResult.getCarNames();
-        List<Integer> distances = roundResult.getDistances();
-        IntStream.range(0, carNames.size())
-                .forEach(index -> System.out.println(carNames.get(index) + " : " + DISTANCE_SYMBOL.repeat(distances.get(index))));
+        IntStream.range(0, roundResult.getCarNames().size())
+                .forEach(index -> System.out.println(roundResult.getCarNames().get(index) + " : "
+                        + DISTANCE_SYMBOL.repeat(roundResult.getDistances().get(index))));
     }
 
     public void showFinalResult(List<Car> winner) {
