@@ -14,7 +14,7 @@ class CarTest {
     @DisplayName("차를 달리게 하고 달린 거리를 반환한다")
     void driveAndGetDistance() {
         Car audi = new Car("Audi");
-        audi.drive();
+        audi.moveOn();
         int expectedDistance = 1;
         int actualDistance = audi.getDistance();
         assertThat(actualDistance).isEqualTo(expectedDistance);
@@ -35,7 +35,7 @@ class CarTest {
         Car audi = new Car("Audi");
         Car bmw = new Car("BMW");
         Car benz = new Car("Benz");
-        audi.drive();
+        audi.moveOn();
         assertThat(audi.hasLongestDistance(Arrays.asList(audi, bmw, benz))).isTrue();
     }
 }

@@ -43,8 +43,8 @@ class RacingTest {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
         racing.race(Arrays.asList(true, false, true));
         assertAll(
-                () -> assertThat(racing.findLongestDistanceCar().get(0).getCarName()).isEqualTo("Audi"),
-                () -> assertThat(racing.findLongestDistanceCar().get(1).getCarName()).isEqualTo("Benz")
+                () -> assertThat(racing.findLongestDistanceCars().get(0).getCarName()).isEqualTo("Audi"),
+                () -> assertThat(racing.findLongestDistanceCars().get(1).getCarName()).isEqualTo("Benz")
         );
     }
 }

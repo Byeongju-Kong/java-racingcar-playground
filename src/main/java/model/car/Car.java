@@ -19,7 +19,7 @@ public class Car {
         return distance.getDistance();
     }
 
-    public void drive() {
+    public void moveOn() {
         distance = new Distance(getDistance() + 1);
     }
 

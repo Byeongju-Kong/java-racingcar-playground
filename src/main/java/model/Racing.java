@@ -39,7 +39,7 @@ public class Racing {
     public void race(final List<Boolean> randomMovements) {
         IntStream.range(0, numberOfCars)
                 .filter(randomMovements::get)
-                .forEach(index -> cars.get(index).drive());
+                .forEach(index -> cars.get(index).moveOn());
     }
 
     public List<Car> findLongestDistanceCars() {
