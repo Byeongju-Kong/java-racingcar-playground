@@ -19,6 +19,15 @@ class CarNameTest {
     }
 
     @ParameterizedTest
+    @DisplayName("5자를 넘는 문자열로 CarName을 생성하면 오류를 발생시킨다")
+    @ValueSource(strings = {" Benz", " "})
+    void create_ExceptionByFirstSpaceOrWholeSpace(String carName) {
+        assertThatThrownBy(() -> new CarName(carName))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("차 이름은 공백으로 시작할 수 없고, 차 이름을 공백으로 생성할 수 없습니다.");
+    }
+
+    @ParameterizedTest
     @DisplayName("getCarName()으로 차 이름을 반환한다.")
     @CsvSource({"Audi, Audi", "BMW, BMW"})
     void getCarName(String givenCarName, String expect) {
