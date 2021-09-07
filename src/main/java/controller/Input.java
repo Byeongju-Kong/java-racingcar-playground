@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Input {
     Scanner scanner = new Scanner(System.in);
 
-    public String[] inputCarNames() {
-        return scanner.nextLine().split(",");
+    public static String[] inputCarNames() {
+        return SCANNER.nextLine().split(",");
     }
 
-    public Integer inputRacingRound() {
-        return Integer.parseInt(scanner.nextLine());
+    public static Integer inputRacingRound() {
+        return Integer.parseInt(SCANNER.nextLine());
     }
 }

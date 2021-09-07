@@ -9,22 +9,24 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static controller.Input.inputCarNames;
+import static controller.Input.inputRacingRound;
+
 public class RacingGameController {
     private final Racing racing;
     private final Integer numberOfCars;
     private final Displayable display = new Display();
-    private final Input input = new Input();
 
     public RacingGameController() {
         display.alertInputCarNames();
-        String[] carNames = input.inputCarNames();
+        String[] carNames = inputCarNames();
         numberOfCars = carNames.length;
         racing = new Racing(carNames);
     }
 
     public void run() {
         display.alertInputRacingRound();
-        int racingRound = input.inputRacingRound();
+        int racingRound = inputRacingRound();
         display.showStart();
         while (racingRound-- > 0) {
             race();
