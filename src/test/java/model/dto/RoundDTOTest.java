@@ -11,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class RoundDTOTest {
     private RoundDTO roundDTO;
+
     @BeforeEach
     void setUp() {
         List<String> carNames = Arrays.asList("Audi", "Benz", "BMW");
