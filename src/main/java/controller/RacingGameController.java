@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class RacingGameController implements GameController {
+public class RacingGameController {
     private final Racing racing;
     private final Integer numberOfCars;
     private final Displayable display = new Display();
