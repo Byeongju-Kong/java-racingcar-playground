@@ -16,6 +16,7 @@ public class RacingGameController {
     private final Racing racing;
     private final Integer numberOfCars;
     private final Displayable display = new Display();
+    private static final int ENDING_ROUND = 0;
 
     public RacingGameController() {
         display.alertInputCarNames();
@@ -28,7 +29,7 @@ public class RacingGameController {
         display.alertInputRacingRound();
         int racingRound = inputRacingRound();
         display.showStart();
-        while (racingRound-- > 0) {
+        while (racingRound-- > ENDING_ROUND) {
             race();
         }
         display.showFinalResult(racing.findLongestDistanceCars());
