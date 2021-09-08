@@ -1,9 +1,9 @@
 package model;
 
+import model.car.Car;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -31,17 +31,19 @@ class RacingTest {
     @DisplayName("랜덤한 이동여부를 받아 경주차들을 전진시킨다.")
     void race() {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
-        racing.race(Arrays.asList(true, false, true));
-        List<Integer> expectedDistances = Arrays.asList(1, 0, 1);
-        List<Integer> actualDistances = racing.getRoundResult().getDistances();
-        assertThat(actualDistances).isEqualTo(expectedDistances);
+        List<Car> racedCars = racing.race(new boolean[]{true, false, true});
+        assertAll(
+                () -> assertThat(racedCars.get(0).getDistance()).isEqualTo(1),
+                () -> assertThat(racedCars.get(1).getDistance()).isZero(),
+                () -> assertThat(racedCars.get(2).getDistance()).isEqualTo(1)
+        );
     }
 
     @Test
     @DisplayName("세 개의 경주차 중 가장 먼 거리를 간 차를 찾는다.")
     void findLongestDistanceCar() {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
-        racing.race(Arrays.asList(true, false, true));
+        racing.race(new boolean[]{true, false, true});
         assertAll(
                 () -> assertThat(racing.findLongestDistanceCars().get(0).getCarName()).isEqualTo("Audi"),
                 () -> assertThat(racing.findLongestDistanceCars().get(1).getCarName()).isEqualTo("Benz")
