@@ -12,7 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Display display = new RacingDisplay(scanner);
         Movement movement = new RandomMovement();
-        RacingGameController racingGameController = new RacingGameController(display, movement);
+        RacingController racingGameController = new RacingController(display, movement);
         racingGameController.run();
         scanner.close();
     }

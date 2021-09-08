@@ -7,14 +7,14 @@ import view.Display;
 
 import java.util.List;
 
-public class RacingGameController {
+public class RacingController {
     private final Racing racing;
     private final Integer numberOfCars;
     private final Display display;
     private final Movement movement;
     private static final int ENDING_ROUND = 0;
 
-    public RacingGameController(Display display, Movement movement) {
+    public RacingController(Display display, Movement movement) {
         this.display = display;
         this.movement = movement;
         String[] carNames = display.inputCarNames();
