@@ -9,6 +9,7 @@ public class Car {
     private final CarName carName;
     private final Distance distance;
     private static final int DISTANCE_UNIT = 1;
+    private static final int INITIAL_DISTANCE = 0;
 
     public Car(String carName, Integer distance) {
         this.carName = new CarName(carName);
@@ -16,7 +17,7 @@ public class Car {
     }
 
     public Car(String carName) {
-        this(carName, 0);
+        this(carName, INITIAL_DISTANCE);
     }
 
     public String getCarName() {
