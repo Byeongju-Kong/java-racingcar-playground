@@ -1,5 +1,6 @@
-package controller;
+package main;
 
+import controller.RacingController;
 import model.movement.Movement;
 import model.movement.RandomMovement;
 import view.Display;
