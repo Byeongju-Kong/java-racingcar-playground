@@ -1,14 +1,22 @@
 package model.car;
 
+import model.vo.CarName;
+import model.vo.Distance;
+
 import java.util.List;
 
 public class Car {
     private final CarName carName;
-    private Distance distance;
+    private final Distance distance;
+    private static final int DISTANCE_UNIT = 1;
+
+    public Car(String carName, Integer distance) {
+        this.carName = new CarName(carName);
+        this.distance = new Distance(distance);
+    }
 
     public Car(String carName) {
-        this.carName = new CarName(carName);
-        distance = new Distance(0);
+        this(carName, 0);
     }
 
     public String getCarName() {
@@ -19,8 +27,11 @@ public class Car {
         return distance.getDistance();
     }
 
-    public void moveOn() {
-        distance = new Distance(getDistance() + 1);
+    public Car moveOn(boolean movement) {
+        if (movement) {
+            return new Car(carName.getCarName(), distance.getDistance() + DISTANCE_UNIT);
+        }
+        return this;
     }
 
     public boolean hasLongestDistance(final List<Car> otherCars) {
