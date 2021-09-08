@@ -1,4 +1,4 @@
-package model.car;
+package model.vo;
 
 public class Distance {
     private final Integer movementTimes;
