@@ -18,7 +18,7 @@ public class Cars {
         carValues = cars;
     }
 
-    public List<Car> race(final boolean[] randomMovements) {
+    public List<Car> race(final Boolean[] randomMovements) {
         return IntStream.range(0, carValues.size())
                 .mapToObj(index -> carValues.get(index).moveOn(randomMovements[index]))
                 .collect(Collectors.toList());

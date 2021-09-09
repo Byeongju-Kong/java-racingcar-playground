@@ -24,7 +24,7 @@ public class Racing {
         }
     }
 
-    public List<Car> race(final boolean[] randomMovements) {
+    public List<Car> race(final Boolean[] randomMovements) {
         cars = new Cars(cars.race(randomMovements));
         return cars.getCars();
     }
