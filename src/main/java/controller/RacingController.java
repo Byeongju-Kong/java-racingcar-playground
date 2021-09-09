@@ -26,7 +26,7 @@ public class RacingController {
             race();
         }
         String[] winners = new Referee().findWinners(racing.getRacedResult());
-        display.showFinalResult(winners);
+        display.showWinners(winners);
     }
 
     private void race() {
