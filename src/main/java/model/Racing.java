@@ -24,12 +24,11 @@ public class Racing {
         }
     }
 
-    public List<Car> race(final Boolean[] randomMovements) {
+    public void race(final Boolean[] randomMovements) {
         cars = new Cars(cars.race(randomMovements));
-        return cars.getCars();
     }
 
-    public List<Car> findLongestDistanceCars() {
-        return cars.findLongestDistanceCars();
+    public List<Car> getRacedResult() {
+        return cars.getCars();
     }
 }
