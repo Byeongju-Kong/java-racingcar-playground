@@ -1,11 +1,9 @@
 package controller;
 
 import model.Racing;
-import model.car.Car;
+import model.Referee;
 import model.movement.Movement;
 import view.Display;
-
-import java.util.List;
 
 public class RacingController {
     private final Racing racing;
@@ -27,11 +25,12 @@ public class RacingController {
         while (racingRound-- > ENDING_ROUND) {
             race();
         }
-        display.showFinalResult(racing.findLongestDistanceCars());
+        String[] winners = new Referee().findLongestCars(racing.getRacedResult());
+        display.showFinalResult(winners);
     }
 
     private void race() {
-        List<Car> racedCars = racing.race(movement.generateRandomMovements(numberOfCars));
-        display.showRoundResult(racedCars);
+        racing.race(movement.generateRandomMovements(numberOfCars));
+        display.showRoundResult(racing.getRacedResult());
     }
 }
