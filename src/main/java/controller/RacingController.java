@@ -25,7 +25,7 @@ public class RacingController {
         while (racingRound-- > ENDING_ROUND) {
             race();
         }
-        String[] winners = new Referee().findLongestCars(racing.getRacedResult());
+        String[] winners = new Referee().findWinners(racing.getRacedResult());
         display.showFinalResult(winners);
     }
 
