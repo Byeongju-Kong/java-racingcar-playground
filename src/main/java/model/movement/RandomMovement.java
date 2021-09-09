@@ -1,16 +1,15 @@
 package model.movement;
 
 import java.util.Random;
-import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class RandomMovement implements Movement {
     private final Random random = new Random();
 
-    public boolean[] generateRandomMovements(int numberOfCars) {
-        boolean[] randomMovements = new boolean[numberOfCars];
-        IntStream.range(0, numberOfCars)
-                .forEach(index -> randomMovements[index] = generateRandom());
-        return randomMovements;
+    public Boolean[] generateRandomMovements(int numberOfCars) {
+        return Stream.generate(this::generateRandom)
+                .limit(numberOfCars)
+                .toArray(Boolean[]::new);
     }
 
     protected Boolean generateRandom() {
