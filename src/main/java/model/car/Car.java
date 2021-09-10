@@ -16,7 +16,7 @@ public class Car {
         this.distance = new Distance(distance);
     }
 
-    public Car(String carName) {
+    public Car(final String carName) {
         this(carName, INITIAL_DISTANCE);
     }
 
@@ -28,7 +28,7 @@ public class Car {
         return distance.getDistance();
     }
 
-    public Car moveOn(boolean movement) {
+    public Car moveOn(final boolean movement) {
         if (movement) {
             return new Car(carName.getCarName(), distance.getDistance() + DISTANCE_UNIT);
         }

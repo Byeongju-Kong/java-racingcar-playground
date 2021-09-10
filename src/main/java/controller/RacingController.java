@@ -12,7 +12,7 @@ public class RacingController {
     private final Movement movement;
     private static final int ENDING_ROUND = 0;
 
-    public RacingController(Display display, Movement movement) {
+    public RacingController(final Display display, final Movement movement) {
         this.display = display;
         this.movement = movement;
         String[] carNames = display.inputCarNames();

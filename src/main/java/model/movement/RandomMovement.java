@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 public class RandomMovement implements Movement {
     private final Random random = new Random();
 
-    public Boolean[] generateRandomMovements(int numberOfCars) {
+    public Boolean[] generateRandomMovements(final int numberOfCars) {
         return Stream.generate(this::generateRandom)
                 .limit(numberOfCars)
                 .toArray(Boolean[]::new);

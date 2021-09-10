@@ -8,13 +8,13 @@ import java.util.stream.Stream;
 public class Cars {
     private final List<Car> carValues;
 
-    public Cars(String[] carNames) {
+    public Cars(final String[] carNames) {
         carValues = Stream.of(carNames)
                 .map(Car::new)
                 .collect(Collectors.toList());
     }
 
-    public Cars(List<Car> cars) {
+    public Cars(final List<Car> cars) {
         carValues = cars;
     }
 

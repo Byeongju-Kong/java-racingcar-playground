@@ -10,7 +10,7 @@ public class CarName {
         this.name = carName;
     }
 
-    private void validateCarName(String carName) {
+    private void validateCarName(final String carName) {
         if (carName.length() > CAR_NAME_LENGTH_BOUNDARY) {
             throw new IllegalArgumentException("차 이름은 5글자보다 길 수 없습니다");
         }
