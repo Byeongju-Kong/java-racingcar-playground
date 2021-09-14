@@ -30,7 +30,7 @@ public class RacingController {
     }
 
     private void race() {
-        racing.race(movement.generateRandomMovements(numberOfCars));
+        racing.race(movement);
         display.showRoundResult(racing.getRacedResult());
     }
 }

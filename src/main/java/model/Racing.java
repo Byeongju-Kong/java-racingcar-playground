@@ -2,6 +2,7 @@ package model;
 
 import model.car.Car;
 import model.car.Cars;
+import model.movement.Movement;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,8 +25,8 @@ public class Racing {
         }
     }
 
-    public void race(final boolean[] randomMovements) {
-        cars = new Cars(cars.race(randomMovements));
+    public void race(final Movement movement) {
+        cars = new Cars(cars.race(movement));
     }
 
     public List<Car> getRacedResult() {

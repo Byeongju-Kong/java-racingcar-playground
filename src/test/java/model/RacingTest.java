@@ -1,6 +1,9 @@
 package model;
 
 import model.car.Car;
+import model.movement.Movement;
+import model.movement.RandomMovement;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +14,20 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 class RacingTest {
+    private Movement movement;
+    private int randomIndex = 0;
+    boolean[] randomMovements = new boolean[]{true, false, true};
+
+    @BeforeEach
+    void setUp() {
+        movement = new RandomMovement() {
+            @Override
+            public boolean generateRandom() {
+                return randomMovements[randomIndex++];
+            }
+        };
+    }
+
     @Test
     @DisplayName("자동차 이름의 개수에 중복이 있다면 예외를 발생시킨다.")
     void create_ExceptionByOneCar() {
@@ -31,7 +48,7 @@ class RacingTest {
     @DisplayName("랜덤한 이동여부를 받아 경주차들을 전진시킨다.")
     void race() {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
-        racing.race(new boolean[]{true, false, true});
+        racing.race(movement);
         List<Car> racedCars = racing.getRacedResult();
         assertAll(
                 () -> assertThat(racedCars.get(0).getDistance()).isEqualTo(1),
