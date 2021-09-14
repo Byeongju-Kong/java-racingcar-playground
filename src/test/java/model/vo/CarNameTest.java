@@ -24,7 +24,7 @@ class CarNameTest {
     void create_ExceptionByFirstSpaceOrWholeSpace(String carName) {
         assertThatThrownBy(() -> new CarName(carName))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("차 이름은 공백으로 시작할 수 없고, 차 이름을 공백으로 생성할 수 없습니다.");
+                .hasMessage("차 이름엔 공백이 포함될 수 없습니다.");
     }
 
     @ParameterizedTest
