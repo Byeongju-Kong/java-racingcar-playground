@@ -31,7 +31,7 @@ class RacingTest {
     @DisplayName("랜덤한 이동여부를 받아 경주차들을 전진시킨다.")
     void race() {
         Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
-        racing.race(new Boolean[]{true, false, true});
+        racing.race(new boolean[]{true, false, true});
         List<Car> racedCars = racing.getRacedResult();
         assertAll(
                 () -> assertThat(racedCars.get(0).getDistance()).isEqualTo(1),

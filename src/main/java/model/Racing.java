@@ -24,7 +24,7 @@ public class Racing {
         }
     }
 
-    public void race(final Boolean[] randomMovements) {
+    public void race(final boolean[] randomMovements) {
         cars = new Cars(cars.race(randomMovements));
     }
 

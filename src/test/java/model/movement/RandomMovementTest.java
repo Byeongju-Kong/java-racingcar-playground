@@ -13,7 +13,7 @@ class RandomMovementTest{
     void generateRandomMovements(boolean given, boolean taken) {
         Movement randomMovement = new RandomMovement() {
             @Override
-            protected Boolean generateRandom() {
+            protected boolean generateRandom() {
                 return given;
             }
         };

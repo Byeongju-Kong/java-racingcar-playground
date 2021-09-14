@@ -20,7 +20,7 @@ class CarsTest {
     @Test
     @DisplayName("랜덤 이동 여부를 받아 차들을 이동시킨다.")
     void race() {
-        List<Car> movedCars = cars.race(new Boolean[]{true, true, false});
+        List<Car> movedCars = cars.race(new boolean[]{true, true, false});
         assertAll(
                 () -> assertThat(movedCars.get(0).getDistance()).isEqualTo(1),
                 () -> assertThat(movedCars.get(1).getDistance()).isEqualTo(1),
@@ -31,7 +31,7 @@ class CarsTest {
     @Test
     @DisplayName("가장 멀리 이동한 차들을 반환한다.")
     void findLongestDistanceCars() {
-        Cars racedCars = new Cars(cars.race(new Boolean[]{true, true, false}));
+        Cars racedCars = new Cars(cars.race(new boolean[]{true, true, false}));
         List<Car> LongestCars = racedCars.findLongestDistanceCars();
         assertAll(
                 () -> assertThat(LongestCars.get(0).getCarName()).isEqualTo("Audi"),
