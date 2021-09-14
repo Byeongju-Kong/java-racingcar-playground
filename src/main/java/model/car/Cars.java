@@ -1,8 +1,9 @@
 package model.car;
 
+import model.movement.Movement;
+
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Cars {
@@ -18,9 +19,9 @@ public class Cars {
         carValues = cars;
     }
 
-    public List<Car> race(final boolean[] randomMovements) {
-        return IntStream.range(0, carValues.size())
-                .mapToObj(index -> carValues.get(index).moveOn(randomMovements[index]))
+    public List<Car> race(final Movement movement) {
+        return carValues.stream()
+                .map(car -> car.moveOn(movement.generateRandom()))
                 .collect(Collectors.toList());
     }
 
