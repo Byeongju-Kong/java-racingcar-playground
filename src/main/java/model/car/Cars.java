@@ -22,12 +22,12 @@ public class Cars {
     public List<Car> race(final Movement movement) {
         return carValues.stream()
                 .map(car -> car.moveOn(movement.generateRandom()))
-                .collect(Collectors.toList());
+                .collect(Collectors.toUnmodifiableList());
     }
 
     public List<Car> findLongestDistanceCars() {
         return carValues.stream().filter(car -> car.hasLongestDistance(carValues))
-                .collect(Collectors.toList());
+                .collect(Collectors.toUnmodifiableList());
     }
 
     public List<Car> getCars() {
