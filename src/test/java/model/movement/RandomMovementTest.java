@@ -13,10 +13,10 @@ class RandomMovementTest{
     void generateRandomMovements(boolean given, boolean taken) {
         Movement randomMovement = new RandomMovement() {
             @Override
-            protected boolean generateRandom() {
+            public boolean generateRandom() {
                 return given;
             }
         };
-        assertThat(randomMovement.generateRandomMovements(3)).isEqualTo(new boolean[]{taken, taken, taken});
+        assertThat(randomMovement.generateRandom()).isEqualTo(taken);
     }
 }
