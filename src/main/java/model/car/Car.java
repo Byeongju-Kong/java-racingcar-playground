@@ -21,16 +21,16 @@ public class Car {
     }
 
     public String getCarName() {
-        return carName.getCarName();
+        return carName.getValue();
     }
 
     public Integer getDistance() {
-        return distance.getDistance();
+        return distance.getValue();
     }
 
     public Car moveOn(final boolean movement) {
         if (movement) {
-            return new Car(carName.getCarName(), distance.getDistance() + DISTANCE_UNIT);
+            return new Car(carName.getValue(), distance.getValue() + DISTANCE_UNIT);
         }
         return this;
     }

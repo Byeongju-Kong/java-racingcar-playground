@@ -32,7 +32,7 @@ class CarNameTest {
     @CsvSource({"Audi, Audi", "BMW, BMW"})
     void getCarName(String givenCarName, String expect) {
         CarName carName = new CarName(givenCarName);
-        String actual = carName.getCarName();
+        String actual = carName.getValue();
         assertThat(actual).isEqualTo(expect);
     }
 }

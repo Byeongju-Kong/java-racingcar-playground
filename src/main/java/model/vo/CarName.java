@@ -21,7 +21,7 @@ public class CarName {
         }
     }
 
-    public String getCarName() {
+    public String getValue() {
         return name;
     }
 
