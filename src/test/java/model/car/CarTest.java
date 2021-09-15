@@ -1,5 +1,7 @@
 package model.car;
 
+import model.vo.CarName;
+import model.vo.Distance;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,12 +17,12 @@ class CarTest {
     @DisplayName("차를 달리게 하고 달린 거리를 반환한다")
     void GetCarNameAndDistance() {
         Car car = new Car("Audi", 1);
-        String actualCarName = car.getCarName();
-        int actualDistance = car.getDistance();
+        CarName actualCarName = car.getCarName();
+        Distance actualDistance = car.getDistance();
 
         assertAll(
-                () -> assertThat(actualCarName).isEqualTo("Audi"),
-                () -> assertThat(actualDistance).isEqualTo(1)
+                () -> assertThat(actualCarName).isEqualTo(new CarName("Audi")),
+                () -> assertThat(actualDistance).isEqualTo(new Distance(1))
         );
     }
 

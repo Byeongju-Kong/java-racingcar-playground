@@ -30,8 +30,8 @@ public class RacingDisplay implements Display {
     @Override
     public void showRoundResult(List<Car> cars) {
         IntStream.range(0, cars.size())
-                .forEach(index -> System.out.println(cars.get(index).getCarName() + " : "
-                        + DISTANCE_SYMBOL.repeat(cars.get(index).getDistance())));
+                .forEach(index -> System.out.println(cars.get(index).getCarName().getValue() + " : "
+                        + DISTANCE_SYMBOL.repeat(cars.get(index).getDistance().getValue())));
     }
 
     @Override

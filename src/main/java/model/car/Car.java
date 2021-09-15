@@ -20,12 +20,12 @@ public class Car {
         this(carName, INITIAL_DISTANCE);
     }
 
-    public String getCarName() {
-        return carName.getValue();
+    public CarName getCarName() {
+        return carName;
     }
 
-    public Integer getDistance() {
-        return distance.getValue();
+    public Distance getDistance() {
+        return distance;
     }
 
     public Car moveOn(final boolean movement) {

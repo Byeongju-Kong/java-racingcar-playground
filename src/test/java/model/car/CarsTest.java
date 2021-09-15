@@ -2,6 +2,8 @@ package model.car;
 
 import model.movement.Movement;
 import model.movement.RandomMovement;
+import model.vo.CarName;
+import model.vo.Distance;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,9 +35,9 @@ class CarsTest {
     void race() {
         List<Car> movedCars = cars.race(movement);
         assertAll(
-                () -> assertThat(movedCars.get(0).getDistance()).isEqualTo(1),
-                () -> assertThat(movedCars.get(1).getDistance()).isZero(),
-                () -> assertThat(movedCars.get(2).getDistance()).isEqualTo(1)
+                () -> assertThat(movedCars.get(0).getDistance()).isEqualTo(new Distance(1)),
+                () -> assertThat(movedCars.get(1).getDistance()).isEqualTo(new Distance(0)),
+                () -> assertThat(movedCars.get(2).getDistance()).isEqualTo(new Distance(1))
         );
     }
 
@@ -46,8 +48,8 @@ class CarsTest {
         Cars racedCars = new Cars(cars.race(movement));
         List<Car> LongestCars = racedCars.findLongestDistanceCars();
         assertAll(
-                () -> assertThat(LongestCars.get(0).getCarName()).isEqualTo("Audi"),
-                () -> assertThat(LongestCars.get(1).getCarName()).isEqualTo("BMW")
+                () -> assertThat(LongestCars.get(0).getCarName()).isEqualTo(new CarName("Audi")),
+                () -> assertThat(LongestCars.get(1).getCarName()).isEqualTo(new CarName("BMW"))
         );
     }
 }

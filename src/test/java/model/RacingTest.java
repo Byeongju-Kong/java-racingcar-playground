@@ -3,6 +3,7 @@ package model;
 import model.car.Car;
 import model.movement.Movement;
 import model.movement.RandomMovement;
+import model.vo.Distance;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -51,9 +52,9 @@ class RacingTest {
         racing.race(movement);
         List<Car> racedCars = racing.getRacedResult();
         assertAll(
-                () -> assertThat(racedCars.get(0).getDistance()).isEqualTo(1),
-                () -> assertThat(racedCars.get(1).getDistance()).isZero(),
-                () -> assertThat(racedCars.get(2).getDistance()).isEqualTo(1)
+                () -> assertThat(racedCars.get(0).getDistance()).isEqualTo(new Distance(1)),
+                () -> assertThat(racedCars.get(1).getDistance()).isEqualTo(new Distance(0)),
+                () -> assertThat(racedCars.get(2).getDistance()).isEqualTo(new Distance(1))
         );
     }
 }
