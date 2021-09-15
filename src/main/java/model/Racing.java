@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Racing {
-    private Cars cars;
     private static final Integer MIN_NUMBER_OF_CARS = 2;
+    private Cars cars;
 
     public Racing(final String[] carNames) {
         validateCarNames(carNames);

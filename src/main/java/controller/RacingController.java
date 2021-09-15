@@ -6,10 +6,10 @@ import model.movement.Movement;
 import view.Display;
 
 public class RacingController {
+    private static final int ENDING_ROUND = 0;
     private final Racing racing;
     private final Display display;
     private final Movement movement;
-    private static final int ENDING_ROUND = 0;
 
     public RacingController(final Display display, final Movement movement) {
         this.display = display;

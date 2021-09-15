@@ -6,10 +6,10 @@ import model.vo.Distance;
 import java.util.List;
 
 public class Car {
-    private final CarName carName;
-    private final Distance distance;
     private static final int DISTANCE_UNIT = 1;
     private static final int INITIAL_DISTANCE = 0;
+    private final CarName carName;
+    private final Distance distance;
 
     public Car(String carName, Integer distance) {
         this.carName = new CarName(carName);
