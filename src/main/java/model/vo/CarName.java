@@ -1,5 +1,7 @@
 package model.vo;
 
+import java.util.Objects;
+
 public class CarName {
     private static final Integer CAR_NAME_LENGTH_BOUNDARY = 5;
     private static final String EMPTY = " ";
@@ -21,5 +23,18 @@ public class CarName {
 
     public String getCarName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CarName carName = (CarName) o;
+        return Objects.equals(name, carName.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

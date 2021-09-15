@@ -1,5 +1,7 @@
 package model.vo;
 
+import java.util.Objects;
+
 public class Distance {
     private final int movementTimes;
 
@@ -12,5 +14,18 @@ public class Distance {
 
     public int getDistance() {
         return movementTimes;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Distance distance = (Distance) o;
+        return movementTimes == distance.movementTimes;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(movementTimes);
     }
 }
