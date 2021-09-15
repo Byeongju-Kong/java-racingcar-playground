@@ -1,6 +1,7 @@
 package model;
 
 import model.car.Car;
+import model.vo.CarName;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ public class Referee {
         return cars.stream()
                 .filter(car -> car.hasLongestDistance(cars))
                 .map(Car::getCarName)
+                .map(CarName::getValue)
                 .toArray(String[]::new);
     }
 }
