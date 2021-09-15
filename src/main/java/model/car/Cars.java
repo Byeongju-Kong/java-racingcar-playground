@@ -21,7 +21,7 @@ public class Cars {
 
     public List<Car> race(final Movement movement) {
         return carValues.stream()
-                .map(car -> car.moveOn(movement.generateRandom()))
+                .map(car -> car.moveOn(movement.generateMovement()))
                 .collect(Collectors.toUnmodifiableList());
     }
 

@@ -24,7 +24,7 @@ class CarsTest {
         cars = new Cars(new String[]{"Audi", "Benz", "BMW"});
         movement = new RandomMovement() {
             @Override
-            public boolean generateRandom() {
+            public boolean generateMovement() {
                 return randomMovements[randomIndex++];
             }
         };

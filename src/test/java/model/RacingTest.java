@@ -23,7 +23,7 @@ class RacingTest {
     void setUp() {
         movement = new RandomMovement() {
             @Override
-            public boolean generateRandom() {
+            public boolean generateMovement() {
                 return randomMovements[randomIndex++];
             }
         };
