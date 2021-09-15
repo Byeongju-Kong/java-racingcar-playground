@@ -16,6 +16,10 @@ public class Distance {
         return movementTimes;
     }
 
+    public boolean isShorter(Distance another) {
+        return movementTimes <= another.movementTimes;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
