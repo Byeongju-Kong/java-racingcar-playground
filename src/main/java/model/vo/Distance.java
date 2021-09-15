@@ -12,7 +12,7 @@ public class Distance {
         movementTimes = distance;
     }
 
-    public int getDistance() {
+    public int getValue() {
         return movementTimes;
     }
 

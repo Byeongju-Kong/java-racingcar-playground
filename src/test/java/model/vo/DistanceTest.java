@@ -11,7 +11,7 @@ class DistanceTest {
     @DisplayName("거리를 반환한다")
     void increaseAndGetDistance() {
         Distance distance = new Distance(3);
-        int actual = distance.getDistance();
+        int actual = distance.getValue();
         int expect = 3;
         assertThat(actual).isEqualTo(expect);
     }
