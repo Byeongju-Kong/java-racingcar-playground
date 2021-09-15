@@ -1,13 +1,16 @@
 package model.vo;
 
 public class Distance {
-    private final Integer movementTimes;
+    private final int movementTimes;
 
-    public Distance(final Integer distance) {
+    public Distance(final int distance) {
+        if (distance < 0) {
+            throw new IllegalArgumentException("이동 거리는 0보다 작을 수 없습니다.");
+        }
         movementTimes = distance;
     }
 
-    public Integer getDistance() {
+    public int getDistance() {
         return movementTimes;
     }
 }
