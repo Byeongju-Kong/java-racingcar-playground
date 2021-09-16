@@ -3,7 +3,11 @@ package controller;
 import model.Racing;
 import model.Referee;
 import model.movement.Movement;
+import model.movement.RandomMovement;
 import view.Display;
+import view.RacingDisplay;
+
+import java.util.Scanner;
 
 public class RacingController {
     private static final int ENDING_ROUND = 0;
@@ -29,5 +33,14 @@ public class RacingController {
     private void race() {
         racing.race(movement);
         display.showRoundResult(racing.getRacedResult());
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Display display = new RacingDisplay(scanner);
+        Movement movement = new RandomMovement();
+        RacingController racingGameController = new RacingController(display, movement);
+        racingGameController.run();
+        scanner.close();
     }
 }
