@@ -2,7 +2,7 @@ package model;
 
 import model.car.Car;
 import model.car.Cars;
-import model.movement.Movement;
+import model.movement.MovementStrategy;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +25,7 @@ public class Racing {
         }
     }
 
-    public void race(final Movement movement) {
+    public void race(final MovementStrategy movement) {
         cars = new Cars(cars.race(movement));
     }
 

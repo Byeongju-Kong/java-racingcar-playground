@@ -11,7 +11,7 @@ class RandomMovementTest{
     @DisplayName("랜덤한 boolean 값들을 생성한다.")
     @CsvSource({"true, true", "false, false"})
     void generateRandomMovements(boolean given, boolean taken) {
-        Movement randomMovement = new RandomMovement() {
+        MovementStrategy randomMovement = new RandomMovement() {
             @Override
             public boolean generateMovement() {
                 return given;

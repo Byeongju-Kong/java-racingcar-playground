@@ -1,7 +1,7 @@
 package model;
 
 import model.car.Car;
-import model.movement.Movement;
+import model.movement.MovementStrategy;
 import model.movement.RandomMovement;
 import model.vo.Distance;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 class RacingTest {
-    private Movement movement;
+    private MovementStrategy movement;
     private int randomIndex = 0;
     boolean[] randomMovements = new boolean[]{true, false, true};
 

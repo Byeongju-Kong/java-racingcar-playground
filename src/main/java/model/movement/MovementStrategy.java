@@ -1,5 +1,5 @@
 package model.movement;
 
-public interface Movement {
+public interface MovementStrategy {
     boolean generateMovement();
 }

@@ -1,6 +1,6 @@
 package model.car;
 
-import model.movement.Movement;
+import model.movement.MovementStrategy;
 import model.movement.RandomMovement;
 import model.vo.CarName;
 import model.vo.Distance;
@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 
 class CarsTest {
     private Cars cars;
-    private Movement movement;
+    private MovementStrategy movement;
     private int randomIndex = 0;
     boolean[] randomMovements = new boolean[]{true, false, true};
 

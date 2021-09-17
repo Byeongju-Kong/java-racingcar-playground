@@ -1,6 +1,6 @@
 package model.car;
 
-import model.movement.Movement;
+import model.movement.MovementStrategy;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +19,7 @@ public class Cars {
         carValues = cars;
     }
 
-    public List<Car> race(final Movement movement) {
+    public List<Car> race(final MovementStrategy movement) {
         return carValues.stream()
                 .map(car -> car.moveOn(movement.generateMovement()))
                 .collect(Collectors.toUnmodifiableList());
