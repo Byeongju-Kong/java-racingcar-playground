@@ -9,14 +9,14 @@ public class CarName {
 
     public CarName(final String carName) {
         validateCarName(carName);
-        this.name = carName;
+        this.name = carName.trim();
     }
 
     private void validateCarName(final String carName) {
-        if (carName.length() > CAR_NAME_LENGTH_BOUNDARY) {
+        if (carName.trim().length() > CAR_NAME_LENGTH_BOUNDARY) {
             throw new IllegalArgumentException("차 이름은 5글자보다 길 수 없습니다");
         }
-        if (carName.contains(EMPTY)) {
+        if (carName.trim().contains(EMPTY)) {
             throw new IllegalArgumentException("차 이름엔 공백이 포함될 수 없습니다.");
         }
     }
