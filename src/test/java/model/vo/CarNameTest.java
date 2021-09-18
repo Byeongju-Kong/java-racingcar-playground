@@ -1,6 +1,7 @@
 package model.vo;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -18,11 +19,10 @@ class CarNameTest {
                 .hasMessage("차 이름은 5글자보다 길 수 없습니다");
     }
 
-    @ParameterizedTest
+    @Test
     @DisplayName("앞뒤 공백을 제외하고 차 이름에 공백이 있으면 예외를 발생시킨다.")
-    @ValueSource(strings = {" Benz", " "})
-    void create_ExceptionByFirstSpaceOrWholeSpace(String carName) {
-        assertThatThrownBy(() -> new CarName(carName))
+    void create_ExceptionByFirstSpaceOrWholeSpace() {
+        assertThatThrownBy(() -> new CarName("Ben z"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("차 이름엔 공백이 포함될 수 없습니다.");
     }
