@@ -19,7 +19,7 @@ class CarNameTest {
     }
 
     @ParameterizedTest
-    @DisplayName("5자를 넘는 문자열로 CarName을 생성하면 오류를 발생시킨다")
+    @DisplayName("앞뒤 공백을 제외하고 차 이름에 공백이 있으면 예외를 발생시킨다.")
     @ValueSource(strings = {" Benz", " "})
     void create_ExceptionByFirstSpaceOrWholeSpace(String carName) {
         assertThatThrownBy(() -> new CarName(carName))
