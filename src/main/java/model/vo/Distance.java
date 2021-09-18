@@ -16,7 +16,7 @@ public class Distance {
         return value;
     }
 
-    public boolean isShorter(Distance another) {
+    public boolean isShorter(final Distance another) {
         return value <= another.value;
     }
 

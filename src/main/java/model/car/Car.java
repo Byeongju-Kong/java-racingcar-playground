@@ -11,7 +11,7 @@ public class Car {
     private final CarName carName;
     private final Distance distance;
 
-    public Car(String carName, Integer distance) {
+    public Car(final String carName, final Integer distance) {
         this.carName = new CarName(carName);
         this.distance = new Distance(distance);
     }
