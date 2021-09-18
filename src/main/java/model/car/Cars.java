@@ -12,7 +12,7 @@ public class Cars {
     public Cars(final String[] carNames) {
         carValues = Stream.of(carNames)
                 .map(Car::new)
-                .collect(Collectors.toList());
+                .collect(Collectors.toUnmodifiableList());
     }
 
     public Cars(final List<Car> cars) {
