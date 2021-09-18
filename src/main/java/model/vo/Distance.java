@@ -3,21 +3,21 @@ package model.vo;
 import java.util.Objects;
 
 public class Distance {
-    private final int movementTimes;
+    private final int value;
 
     public Distance(final int distance) {
         if (distance < 0) {
             throw new IllegalArgumentException("이동 거리는 0보다 작을 수 없습니다.");
         }
-        movementTimes = distance;
+        value = distance;
     }
 
     public int getValue() {
-        return movementTimes;
+        return value;
     }
 
     public boolean isShorter(Distance another) {
-        return movementTimes <= another.movementTimes;
+        return value <= another.value;
     }
 
     @Override
@@ -25,11 +25,11 @@ public class Distance {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Distance distance = (Distance) o;
-        return movementTimes == distance.movementTimes;
+        return value == distance.value;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(movementTimes);
+        return Objects.hash(value);
     }
 }
