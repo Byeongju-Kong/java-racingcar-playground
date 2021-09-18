@@ -5,11 +5,11 @@ import java.util.Objects;
 public class CarName {
     private static final Integer CAR_NAME_LENGTH_BOUNDARY = 5;
     private static final String EMPTY = " ";
-    private final String name;
+    private final String value;
 
     public CarName(final String carName) {
         validateCarName(carName);
-        this.name = carName.trim();
+        this.value = carName.trim();
     }
 
     private void validateCarName(final String carName) {
@@ -22,7 +22,7 @@ public class CarName {
     }
 
     public String getValue() {
-        return name;
+        return value;
     }
 
     @Override
@@ -30,11 +30,11 @@ public class CarName {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CarName carName = (CarName) o;
-        return Objects.equals(name, carName.name);
+        return Objects.equals(value, carName.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(value);
     }
 }
