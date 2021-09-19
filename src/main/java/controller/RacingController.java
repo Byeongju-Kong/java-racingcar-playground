@@ -10,7 +10,7 @@ import view.RacingDisplay;
 import java.util.Scanner;
 
 public class RacingController {
-    private static final int ENDING_ROUND = 0;
+    private static final int END = 0;
     private final Racing racing;
     private final Display display;
     private final MovementStrategy movement;
@@ -23,7 +23,7 @@ public class RacingController {
 
     public void run() {
         int racingRound = display.inputRacingRound();
-        while (racingRound-- > ENDING_ROUND) {
+        while (racingRound-- > END) {
             race();
         }
         String[] winners = new Referee().findWinners(racing.getRacedResult());
