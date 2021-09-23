@@ -8,8 +8,6 @@ T
 $src/test/java/model/car/CarTest.java,d/7/d7d9ec4c6983296c93b5709fb5129e6fb23c25b6
 T
 $src/test/java/model/RefereeTest.java,6/7/67eb51791d0f75ddb197672b39f233ff60af1cd7
-d
-4src/test/java/model/movement/RandomMovementTest.java,b/d/bd0962a91f1843f066963864402fc9e7d84bdd14
 S
 #src/test/java/model/RacingTest.java,7/c/7c52c1dfed4554bcbc5d26c1e26761be77bc8a37
 b
