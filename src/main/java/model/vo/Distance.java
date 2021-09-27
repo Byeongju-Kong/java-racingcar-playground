@@ -16,8 +16,8 @@ public class Distance {
         return value;
     }
 
-    public boolean isShorter(final Distance another) {
-        return value <= another.value;
+    public boolean isLonger(final Distance another) {
+        return value >= another.value;
     }
 
     @Override
