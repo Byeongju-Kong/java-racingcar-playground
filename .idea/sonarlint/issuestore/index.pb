@@ -14,3 +14,9 @@ U
 .src/main/java/controller/RacingController.java,5/e/5ebf4552fa916f4ebe433915aaae1b4d66d355a6
 d
 4src/test/java/model/movement/RandomMovementTest.java,b/d/bd0962a91f1843f066963864402fc9e7d84bdd14
+O
+src/main/java/view/Display.java,7/8/782a3904df1de7cf6e1235babc8d58e364f9ce09
+U
+%src/main/java/view/RacingDisplay.java,a/0/a05f0cf3757bef63f85df0c0deff911047d111f9
+P
+ src/main/java/model/Referee.java,1/6/1604904ca996c08cb6d5fc46f42ab86e1e8910d3

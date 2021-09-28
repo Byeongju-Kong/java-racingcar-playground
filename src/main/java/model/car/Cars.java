@@ -7,30 +7,30 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Cars {
-    private final List<Car> carValues;
+    private final List<Car> values;
 
     public Cars(final String[] carNames) {
-        carValues = Stream.of(carNames)
+        values = Stream.of(carNames)
                 .map(Car::new)
                 .collect(Collectors.toUnmodifiableList());
     }
 
     public Cars(final List<Car> cars) {
-        carValues = cars;
+        values = cars;
     }
 
     public List<Car> race(final MovementStrategy movement) {
-        return carValues.stream()
+        return values.stream()
                 .map(car -> car.moveOn(movement.generateMovement()))
                 .collect(Collectors.toUnmodifiableList());
     }
 
     public List<Car> findLongestDistanceCars() {
-        return carValues.stream().filter(car -> car.hasLongestDistance(carValues))
+        return values.stream().filter(car -> car.hasLongestDistance(values))
                 .collect(Collectors.toUnmodifiableList());
     }
 
     public List<Car> getCars() {
-        return carValues;
+        return values;
     }
 }
