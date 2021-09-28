@@ -37,10 +37,9 @@ public class RacingDisplay implements Display {
     @Override
     public void showWinners(String[] winners) {
         StringBuilder result = new StringBuilder();
-        String lastWords = "가 최종 우승했습니다.";
         IntStream.range(0, winners.length)
                 .forEach(index -> result.append(winners[index]).append(DELIMITER));
         result.deleteCharAt(result.lastIndexOf(DELIMITER));
-        System.out.print(result.append(lastWords));
+        System.out.print(result.append("가 최종 우승했습니다."));
     }
 }
