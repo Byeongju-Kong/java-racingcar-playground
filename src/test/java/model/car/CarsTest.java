@@ -33,7 +33,8 @@ class CarsTest {
     @Test
     @DisplayName("랜덤 이동 여부를 받아 차들을 이동시킨다.")
     void race() {
-        List<Car> movedCars = cars.race(movement);
+        cars.race(movement);
+        List<Car> movedCars = cars.getCars();
         assertAll(
                 () -> assertThat(movedCars.get(0).getDistance()).isEqualTo(new Distance(1)),
                 () -> assertThat(movedCars.get(1).getDistance()).isEqualTo(new Distance(0)),
@@ -45,7 +46,8 @@ class CarsTest {
     @DisplayName("가장 멀리 이동한 차들을 반환한다.")
     void findLongestDistanceCars() {
         randomIndex = 0;
-        Cars racedCars = new Cars(cars.race(movement));
+        cars.race(movement);
+        Cars racedCars = new Cars(cars.getCars());
         List<Car> LongestCars = racedCars.findLongestDistanceCars();
         assertAll(
                 () -> assertThat(LongestCars.get(0).getCarName()).isEqualTo(new CarName("Audi")),
