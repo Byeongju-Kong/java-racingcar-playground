@@ -13,16 +13,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 class CarTest {
-    @Test
-    @DisplayName("차를 달리게 하고 달린 거리를 반환한다")
-    void GetCarNameAndDistance() {
-        Car car = new Car("Audi", 1);
+    @ParameterizedTest
+    @CsvSource({"true, 1", "false, 0"})
+    @DisplayName("차를 달리게 하면 distatnce가 1 증가한다.")
+    void GetCarNameAndDistance(boolean movement, int expectedDistance) {
+        Car car = new Car("Audi");
+        car.moveOn(movement);
         CarName actualCarName = car.getCarName();
         Distance actualDistance = car.getDistance();
 
         assertAll(
                 () -> assertThat(actualCarName).isEqualTo(new CarName("Audi")),
-                () -> assertThat(actualDistance).isEqualTo(new Distance(1))
+                () -> assertThat(actualDistance).isEqualTo(new Distance(expectedDistance))
         );
     }
 

@@ -6,17 +6,9 @@
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 T
 $src/test/java/model/RefereeTest.java,6/7/67eb51791d0f75ddb197672b39f233ff60af1cd7
-S
-#src/test/java/model/RacingTest.java,7/c/7c52c1dfed4554bcbc5d26c1e26761be77bc8a37
-U
-%src/test/java/model/car/CarsTest.java,8/9/89f592a533862f7a99b37f7e3eb90d151a82702b
-^
-.src/main/java/controller/RacingController.java,5/e/5ebf4552fa916f4ebe433915aaae1b4d66d355a6
 d
 4src/test/java/model/movement/RandomMovementTest.java,b/d/bd0962a91f1843f066963864402fc9e7d84bdd14
 O
 src/main/java/view/Display.java,7/8/782a3904df1de7cf6e1235babc8d58e364f9ce09
-U
-%src/main/java/view/RacingDisplay.java,a/0/a05f0cf3757bef63f85df0c0deff911047d111f9
-P
- src/main/java/model/Referee.java,1/6/1604904ca996c08cb6d5fc46f42ab86e1e8910d3
+W
+'src/test/java/model/vo/CarNameTest.java,e/1/e1a1a49e3b585f1ae6895229ab46b94cf633c7eb
