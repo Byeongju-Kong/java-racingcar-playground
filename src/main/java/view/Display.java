@@ -11,5 +11,5 @@ public interface Display {
 
     void showRoundResult(List<Car> cars);
 
-    void showWinners(String[] winners);
+    void showWinners(List<String> winners);
 }

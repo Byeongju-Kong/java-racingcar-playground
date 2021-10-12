@@ -35,10 +35,10 @@ public class RacingDisplay implements Display {
     }
 
     @Override
-    public void showWinners(String[] winners) {
+    public void showWinners(List<String> winners) {
         StringBuilder result = new StringBuilder();
-        IntStream.range(0, winners.length)
-                .forEach(index -> result.append(winners[index]).append(DELIMITER));
+        IntStream.range(0, winners.size())
+                .forEach(index -> result.append(winners.get(index)).append(DELIMITER));
         result.deleteCharAt(result.lastIndexOf(DELIMITER));
         System.out.print(result.append("가 최종 우승했습니다."));
     }
