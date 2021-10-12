@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,8 +18,8 @@ class RefereeTest {
         Car secondCar = new Car("b", 2);
         Car thirdCar = new Car("c", 2);
 
-        String[] actualWinners = referee.findWinners(Arrays.asList(firstCar, secondCar, thirdCar));
-        String[] expectedWinners = new String[]{"b", "c"};
+        List<String> actualWinners = referee.findWinners(Arrays.asList(firstCar, secondCar, thirdCar));
+        List<String> expectedWinners = Arrays.asList("b", "c");
 
         assertThat(actualWinners).isEqualTo(expectedWinners);
     }
