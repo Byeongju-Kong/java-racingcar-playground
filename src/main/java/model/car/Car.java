@@ -6,14 +6,17 @@ import model.vo.Distance;
 import java.util.List;
 
 public class Car {
-    private static final int DISTANCE_UNIT = 1;
     private static final int INITIAL_DISTANCE = 0;
     private final CarName carName;
     private final Distance distance;
 
+    public Car(final CarName carName, final Distance distance) {
+        this.carName = carName;
+        this.distance = distance;
+    }
+
     public Car(final String carName, final Integer distance) {
-        this.carName = new CarName(carName);
-        this.distance = new Distance(distance);
+        this(new CarName(carName), new Distance(distance));
     }
 
     public Car(final String carName) {
@@ -30,7 +33,7 @@ public class Car {
 
     public Car moveOn(final boolean movement) {
         if(movement) {
-            return new Car(carName.getValue(), distance.getValue() + DISTANCE_UNIT);
+            return new Car(carName, distance.getIncreased());
         }
         return this;
     }
