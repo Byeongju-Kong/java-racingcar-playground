@@ -3,6 +3,7 @@ package model.vo;
 import java.util.Objects;
 
 public class Distance {
+    private static final int DISTANCE_UNIT = 1;
     private final int value;
 
     public Distance(final int distance) {
@@ -18,6 +19,10 @@ public class Distance {
 
     public boolean isLonger(final Distance another) {
         return value >= another.value;
+    }
+
+    public Distance getIncreased() {
+        return new Distance(value + DISTANCE_UNIT);
     }
 
     @Override
