@@ -9,7 +9,7 @@ public class Car {
     private static final int DISTANCE_UNIT = 1;
     private static final int INITIAL_DISTANCE = 0;
     private final CarName carName;
-    private Distance distance;
+    private final Distance distance;
 
     public Car(final String carName, final Integer distance) {
         this.carName = new CarName(carName);
@@ -28,10 +28,11 @@ public class Car {
         return distance;
     }
 
-    public void moveOn(final boolean movement) {
-        if (movement) {
-            distance = new Distance(distance.getValue() + DISTANCE_UNIT);
+    public Car moveOn(final boolean movement) {
+        if(movement) {
+            return new Car(carName.getValue(), distance.getValue() + DISTANCE_UNIT);
         }
+        return this;
     }
 
     public boolean hasLongestDistance(final List<Car> otherCars) {

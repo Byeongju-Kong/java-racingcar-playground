@@ -17,8 +17,8 @@ class CarTest {
     @CsvSource({"true, 1", "false, 0"})
     @DisplayName("차를 달리게 하면 distatnce가 1 증가한다.")
     void GetCarNameAndDistance(boolean movement, int expectedDistance) {
-        Car car = new Car("Audi");
-        car.moveOn(movement);
+        Car car = new Car("Audi", 0);
+        car = car.moveOn(movement);
         CarName actualCarName = car.getCarName();
         Distance actualDistance = car.getDistance();
 
