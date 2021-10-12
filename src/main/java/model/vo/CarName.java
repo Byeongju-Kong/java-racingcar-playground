@@ -8,12 +8,13 @@ public class CarName {
     private final String value;
 
     public CarName(final String carName) {
-        validateCarName(carName);
-        this.value = carName.trim();
+        String trimmedCarName = carName.trim();
+        validateCarName(trimmedCarName);
+        this.value = trimmedCarName;
     }
 
     private void validateCarName(final String carName) {
-        if (carName.trim().length() > CAR_NAME_LENGTH_BOUNDARY) {
+        if (carName.length() > CAR_NAME_LENGTH_BOUNDARY) {
             throw new IllegalArgumentException("차 이름은 5글자보다 길 수 없습니다");
         }
         if (carName.trim().contains(EMPTY)) {
