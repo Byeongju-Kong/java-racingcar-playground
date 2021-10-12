@@ -26,8 +26,7 @@ public class Racing {
     }
 
     public void race(final MovementStrategy movement) {
-        cars.race(movement);
-        cars = new Cars(cars.getCars());
+        cars = new Cars(cars.race(movement));
     }
 
     public List<Car> getRacedResult() {

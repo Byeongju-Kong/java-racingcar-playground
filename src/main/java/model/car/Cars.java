@@ -19,8 +19,10 @@ public class Cars {
         values = cars;
     }
 
-    public void race(final MovementStrategy movement) {
-        values.forEach(car -> car.moveOn(movement.generateMovement()));
+    public List<Car> race(final MovementStrategy movement) {
+        return values.stream()
+                .map(car -> car.moveOn(movement.generateMovement()))
+                .collect(Collectors.toUnmodifiableList());
     }
 
     public List<Car> findLongestDistanceCars() {
