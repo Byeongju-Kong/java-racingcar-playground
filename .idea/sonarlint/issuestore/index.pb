@@ -16,5 +16,3 @@ O
 src/main/java/view/Display.java,7/8/782a3904df1de7cf6e1235babc8d58e364f9ce09
 T
 $src/test/java/model/RefereeTest.java,6/7/67eb51791d0f75ddb197672b39f233ff60af1cd7
-^
-.src/main/java/controller/RacingController.java,5/e/5ebf4552fa916f4ebe433915aaae1b4d66d355a6
