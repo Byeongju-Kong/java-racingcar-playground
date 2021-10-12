@@ -26,7 +26,8 @@ public class Cars {
     }
 
     public List<Car> findLongestDistanceCars() {
-        return values.stream().filter(car -> car.hasLongestDistance(values))
+        return values.stream()
+                .filter(car -> car.hasLongestDistance(values))
                 .collect(Collectors.toUnmodifiableList());
     }
 

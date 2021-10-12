@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class RacingDisplay implements Display {
+public class  RacingDisplay implements Display {
     private static final String DISTANCE_SYMBOL = "-";
     private static final String DELIMITER = ",";
     private final Scanner scanner;

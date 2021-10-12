@@ -17,7 +17,7 @@ public class CarName {
         if (carName.length() > CAR_NAME_LENGTH_BOUNDARY) {
             throw new IllegalArgumentException("차 이름은 5글자보다 길 수 없습니다");
         }
-        if (carName.trim().contains(EMPTY)) {
+        if (carName.contains(EMPTY)) {
             throw new IllegalArgumentException("차 이름엔 공백이 포함될 수 없습니다.");
         }
     }
