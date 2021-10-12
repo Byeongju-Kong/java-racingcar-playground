@@ -4,12 +4,9 @@ import model.Racing;
 import model.RacingRound;
 import model.Referee;
 import model.movement.MovementStrategy;
-import model.movement.RandomMovement;
 import view.Display;
-import view.RacingDisplay;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class RacingController {
     private final Racing racing;
@@ -36,14 +33,5 @@ public class RacingController {
         racing.race(movement);
         display.showRoundResult(racing.getRacedResult());
         racingRound.decreaseLeftRound();
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Display display = new RacingDisplay(scanner);
-        MovementStrategy movement = new RandomMovement();
-        RacingController racingGameController = new RacingController(display, movement);
-        racingGameController.run();
-        scanner.close();
     }
 }
