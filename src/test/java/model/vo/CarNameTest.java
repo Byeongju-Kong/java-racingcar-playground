@@ -10,11 +10,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CarNameTest {
-    @ParameterizedTest
+    @Test
     @DisplayName("5자를 넘는 문자열로 CarName을 생성하면 오류를 발생시킨다")
-    @ValueSource(strings = {"Carnival", "Sonata"})
-    void create_ExceptionByLongerNameThanFive(String carName) {
-        assertThatThrownBy(() -> new CarName(carName))
+    void create_ExceptionByLongerNameThanFive() {
+        assertThatThrownBy(() -> new CarName("Sonata"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("차 이름은 5글자보다 길 수 없습니다");
     }
