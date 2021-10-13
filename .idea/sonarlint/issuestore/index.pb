@@ -16,7 +16,3 @@ T
 $src/main/java/model/vo/Distance.java,b/3/b34ab6bbc1ef2bb79558980d513f01d8fb88375e
 P
  src/main/java/model/Referee.java,1/6/1604904ca996c08cb6d5fc46f42ab86e1e8910d3
-T
-$src/test/java/model/car/CarTest.java,d/7/d7d9ec4c6983296c93b5709fb5129e6fb23c25b6
-U
-%src/main/java/view/RacingDisplay.java,a/0/a05f0cf3757bef63f85df0c0deff911047d111f9
