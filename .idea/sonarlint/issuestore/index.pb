@@ -11,8 +11,6 @@ b
 O
 src/main/java/view/Display.java,7/8/782a3904df1de7cf6e1235babc8d58e364f9ce09
 T
-$src/test/java/model/RefereeTest.java,6/7/67eb51791d0f75ddb197672b39f233ff60af1cd7
-T
 $src/main/java/model/vo/Distance.java,b/3/b34ab6bbc1ef2bb79558980d513f01d8fb88375e
 P
  src/main/java/model/Referee.java,1/6/1604904ca996c08cb6d5fc46f42ab86e1e8910d3
