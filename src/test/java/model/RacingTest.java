@@ -15,13 +15,14 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 class RacingTest {
-    private MovementStrategy movement;
     private int randomIndex = 0;
     boolean[] randomMovements = new boolean[]{true, false, true};
+    private final Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
 
     @BeforeEach
     void setUp() {
-        movement = () -> randomMovements[randomIndex++];
+        MovementStrategy movement = () -> randomMovements[randomIndex++];
+        racing.race(movement);
     }
 
     @Test
@@ -43,8 +44,6 @@ class RacingTest {
     @Test
     @DisplayName("랜덤한 이동여부를 받아 경주차들을 전진시킨다.")
     void race() {
-        Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
-        racing.race(movement);
         List<Car> racedCars = racing.getRacedResult();
         assertAll(
                 () -> assertThat(racedCars.get(0).getDistance()).isEqualTo(new Distance(1)),
@@ -56,8 +55,6 @@ class RacingTest {
     @Test
     @DisplayName("승자의 이름들을 반환한다.")
     void getWinners() {
-        Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
-        racing.race(movement);
         List<String> actualWinnerNames = racing.getWinnersName();
         List<String> expectedWinnerNames = Arrays.asList("Audi", "Benz");
         assertThat(actualWinnerNames).isEqualTo(expectedWinnerNames);
