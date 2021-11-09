@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -50,5 +51,15 @@ class RacingTest {
                 () -> assertThat(racedCars.get(1).getDistance()).isEqualTo(new Distance(0)),
                 () -> assertThat(racedCars.get(2).getDistance()).isEqualTo(new Distance(1))
         );
+    }
+
+    @Test
+    @DisplayName("승자의 이름들을 반환한다.")
+    void getWinners() {
+        Racing racing = new Racing(new String[]{"Audi", "BMW", "Benz"});
+        racing.race(movement);
+        List<String> actualWinnerNames = racing.getWinnersName();
+        List<String> expectedWinnerNames = Arrays.asList("Audi", "Benz");
+        assertThat(actualWinnerNames).isEqualTo(expectedWinnerNames);
     }
 }

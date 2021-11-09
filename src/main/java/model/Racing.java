@@ -3,9 +3,11 @@ package model;
 import model.car.Car;
 import model.car.Cars;
 import model.movement.MovementStrategy;
+import model.vo.CarName;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Racing {
     private static final Integer MIN_NUMBER_OF_CARS = 2;
@@ -31,5 +33,12 @@ public class Racing {
 
     public List<Car> getRacedResult() {
         return cars.getCars();
+    }
+
+    public List<String> getWinnersName() {
+        return cars.findLongestDistanceCars().stream()
+                .map(Car::getCarName)
+                .map(CarName::getValue)
+                .collect(Collectors.toUnmodifiableList());
     }
 }

@@ -2,13 +2,10 @@ package controller;
 
 import model.Racing;
 import model.RacingRound;
-import model.car.Car;
 import model.movement.MovementStrategy;
-import model.vo.CarName;
 import view.Display;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RacingController {
     private final Racing racing;
@@ -27,10 +24,7 @@ public class RacingController {
         while (!racingRound.isOver()) {
             race();
         }
-        List<String> winners = racing.getWinners().stream()
-                .map(Car::getCarName)
-                .map(CarName::getValue)
-                .collect(Collectors.toUnmodifiableList());
+        List<String> winners = racing.getWinnersName();
         display.showWinners(winners);
     }
 
