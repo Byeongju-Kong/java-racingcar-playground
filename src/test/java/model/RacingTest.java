@@ -2,7 +2,6 @@ package model;
 
 import model.car.Car;
 import model.movement.MovementStrategy;
-import model.movement.RandomMovement;
 import model.vo.Distance;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -21,12 +20,7 @@ class RacingTest {
 
     @BeforeEach
     void setUp() {
-        movement = new RandomMovement() {
-            @Override
-            public boolean generateMovement() {
-                return randomMovements[randomIndex++];
-            }
-        };
+        movement = () -> randomMovements[randomIndex++];
     }
 
     @Test
