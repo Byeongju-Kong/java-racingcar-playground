@@ -3,21 +3,22 @@ package controller;
 import model.Racing;
 import model.RacingRound;
 import model.movement.MovementStrategy;
-import view.Display;
+import view.Input;
+import view.Output;
 
 import java.util.List;
 
 public class RacingController {
     private final Racing racing;
-    private final Display display;
+    private final Output outputDisplay;
     private final MovementStrategy movement;
     private final RacingRound racingRound;
 
-    public RacingController(final Display display, final MovementStrategy movement) {
-        this.display = display;
+    public RacingController(final Input inputDisplay, final Output outputDisplay, final MovementStrategy movement) {
+        this.outputDisplay = outputDisplay;
         this.movement = movement;
-        racing = new Racing(display.inputCarNames());
-        racingRound = new RacingRound(display.inputRacingRound());
+        racing = new Racing(inputDisplay.inputCarNames());
+        racingRound = new RacingRound(inputDisplay.inputRacingRound());
     }
 
     public void run() {
@@ -25,12 +26,12 @@ public class RacingController {
             race();
         }
         List<String> winners = racing.getWinnersName();
-        display.showWinners(winners);
+        outputDisplay.showWinners(winners);
     }
 
     private void race() {
         racing.race(movement);
-        display.showRoundResult(racing.getRacedResult());
+        outputDisplay.showRoundResult(racing.getRacedResult());
         racingRound.decreaseLeftRound();
     }
 }
